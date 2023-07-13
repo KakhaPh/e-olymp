@@ -1,0 +1,17 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    long long n;
+    long long x=1;
+    long long k=1;
+    long long s=1;
+    cin>>n;
+    while (s<n) {
+        k++;
+        x=x*2+k;
+        s=s+x;
+    }
+    cout<<k;
+    return 0;
+}

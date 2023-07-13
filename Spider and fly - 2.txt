@@ -1,0 +1,58 @@
+#include <bits/stdc++.h>
+using namespace std;
+double D(int X,int Y,int x,int y)
+{
+    X-=x;Y-=y;
+    return sqrt(X*X+Y*Y);
+}
+int main() {
+    long long A, B, C, X1, X2, Y1, Y2, Z2;
+    double P=1500;
+    cin>>A>>B>>C>>X1>>Y1>>X2>>Y2>>Z2;
+    if (Z2==0)
+    {
+        P=D(X1, Y1, X2, Y2);
+    }
+    else
+    {
+        if (X2==0)
+        {
+            P=min(D(X1, Y1, -Z2, Y2), D(X1, Y1, -Y2, -Z2));
+            P=min(P,D(X1, Y1, Y2 - B, B + Z2));
+        }
+        if (X2 == A)
+        {
+            P=min (D(X1, Y1, Z2 + A, Y2), D(X1, Y1, A + Y2, -Z2));
+            P=min(P,D(X1, Y1, A + B - Y2, Z2 + B));
+        }
+        if (Y2 == 0)
+        {
+            P=min(P,D(X1, Y1, X2, -Z2));
+            P=min(P,D(X1, Y1, -Z2, -X2));
+            P=min(P,D(X1, Y1, A + Z2, X2 - A));
+        }
+        if (Y2 == B)
+        {
+            P=min(P,D(X1, Y1, X2, Z2 + B));
+            P=min(P,D(X1, Y1, -Z2, X2 + B));
+            P=min(P,D(X1, Y1, A + Z2, B + A - X2));
+        }
+        if ((Y2 != 0) && (Y2 != B) && (X2 != 0) && (X2 != A))
+        {
+            P=min(C + D(X1, Y1, X2, Y2), D(X1, Y1, X2, -Y2 - C));
+            P=min(P,D(X1, Y1, X2, 2*B - Y2 + C));
+            P=min(P,D(X1, Y1, -X2 - C, Y2));
+            P=min(P,D(X1, Y1, 2*A - X2 + C, Y2));
+            P=min(P,D(X1, Y1, A + B + C - Y2, A + B - X2));
+            P=min(P,D(X1, Y1, A + C + Y2, X2 - A));
+            P=min(P,D(X1, Y1, -C - Y2, -X2));
+            P=min(P,D(X1, Y1, Y2 - B - C, B + X2));
+            P=min(P,D(X1, Y1, A + B - Y2, A + B + C - X2));
+            P=min(P,D(X1, Y1, Y2 - B, B + C + X2));
+            P=min(P,D(X1, Y1, -Y2, -C - X2));
+            P=min(P,D(X1, Y1, A + Y2, -A - C + X2));
+        }
+    }
+    cout<<fixed<<setprecision(2)<<P;
+    return 0;
+}

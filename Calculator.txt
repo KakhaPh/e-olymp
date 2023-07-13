@@ -1,0 +1,13 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int N=0;
+    int M;
+    string S;
+    cin>>S;
+    stringstream SS(S);
+    while(SS>>M)
+        N+=M;
+        cout<<N;
+}

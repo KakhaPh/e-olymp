@@ -1,0 +1,14 @@
+#include <iostream>
+
+using namespace std;
+
+char D[100][100];
+
+int main()
+{
+    int Bx1,By1,Bx2,By2,Wx1,Wy1,Wx2,Wy2,X,Y;
+    cin>>Bx1>>By1>>Bx2>>By2>>Wx1>>Wy1>>Wx2>>Wy2>>X>>Y;
+    if(Wx1<X && X<Wx2 && Wy2<Y && Y<Wy1)cout<<"SAD";
+    else if(Bx1<=X && X<=Bx2 && By2<=Y && Y<=By1)cout<<"HAPPY";
+         else cout<<"SAD";
+}

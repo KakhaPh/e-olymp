@@ -1,0 +1,22 @@
+#include <bits/stdc++.h>
+using namespace std;
+double D(int X,int Y,int x,int y)
+{
+    X-=x;Y-=y;
+    return sqrt(X*X+Y*Y);
+}
+int main()
+{
+    int A,B,C,X1,Y1,X2,Y2,Z2;
+    double P=1500;
+    cin>>A>>B>>C>>X1>>Y1>>X2>>Y2>>Z2;        
+    if(Z2)
+    {
+        if(X2==0)P=D(X1,Y1,-Z2,Y2);
+        else if(X2==A)P=D(X1,Y1,X2+Z2,Y2);
+        if(Y2==0)P=min(P,D(X1,Y1,X2,-Z2));
+        else if(Y2==B)P=min(P,D(X1,Y1,X2,Y2+Z2));
+    }
+    else P=D(X1,Y1,X2,Y2);
+    cout<<fixed<<setprecision(2)<<P;
+}

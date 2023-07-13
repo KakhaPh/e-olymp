@@ -1,0 +1,12 @@
+#include <iostream>
+using namespace std;
+int main ()
+{
+    double x;
+    cin>>x;
+    double y;
+    cin>>y;
+    cout<<((x==0)||(y==0)?"0":(x>0?
+    (y>0?"1":"4"):(y>0?"2":"3")));
+    return 0;
+}

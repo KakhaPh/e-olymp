@@ -1,0 +1,13 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main(){ int K,P;
+            string S,A="";
+           while(cin>>S)
+              A+=S;
+            for(K=0,P=A.size()-1;
+                   K<P;
+                   ++K,
+                   --P)
+             if(A[K]!=A[P])break;
+               if(K<P)
+               cout<<"NO"; else cout<<"YES";}

@@ -1,0 +1,32 @@
+#include <iostream>
+
+using namespace std;
+
+int C[14];
+
+int main()
+{
+    int M,MJ=0,R=0,Mx=0,Mn=13;
+    for(int i=0;i<5;++i)
+    {
+        cin>>M;
+        R+=!C[M];
+        MJ=max(MJ,++C[M]);
+        Mx=max(M,Mx);
+        Mn=min(M,Mn);
+    }
+    if(R==1){cout<<"Impossible"; return 0;}
+    if(R==4){cout<<"One Pair"; return 0;}
+    if(R==2){
+                if(MJ==4)cout<<"Four of a Kind";
+                else cout<<"Full House";
+                return 0;
+            }
+    if(R==3){
+                if(MJ==3)cout<<"Three of a Kind";
+                else cout<<"Two Pairs";
+                return 0;
+            }
+    if(Mx-Mn==4){cout<<"Straight"; return 0;}
+    cout<<"Nothing";
+}

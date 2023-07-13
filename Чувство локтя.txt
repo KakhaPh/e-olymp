@@ -1,0 +1,21 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    long long K,P;
+    set<long long>D;
+    if(cin>>K){
+        D.insert(K);
+        while(cin>>P)
+        {
+            if(P!=K)
+            {
+                if(D.count(P)){cout<<"Nongrouped";return 0;}
+                K=P;
+                D.insert(P);
+            }
+        }
+        cout<<"Grouped";
+    }
+    else cout<<"Grouped";
+}

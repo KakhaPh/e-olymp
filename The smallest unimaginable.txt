@@ -1,0 +1,12 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    unsigned long long K,P[10000];
+    int i=0,H;
+    while(cin>>K)P[i++]=K;H=i;
+    sort(P,P+H);
+    K=0; for(i=0;i<H;++i)
+        if(K+1<P[i])break;
+        else K+=P[i]; cout<<K+1;
+}

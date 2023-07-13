@@ -1,0 +1,16 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+    int B,D,R,P=0;
+    cin>>B>>D>>R;
+    B+=D;D=0;
+    while(B>=R)
+    {
+        D=B%R;
+        B/=R;
+        P+=B;
+        B+=D;
+    }
+    cout<<P;
+}

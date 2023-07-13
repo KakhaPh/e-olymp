@@ -1,0 +1,16 @@
+//g++  7.4.0
+
+#include <iostream>
+using namespace std;
+int D[256];
+int main() {
+    string S,G="'1234567890-=QWERTYUIOP[]\ASDFGHJKL;'ZXCVBNM,./";
+    int i;
+    for(i=0;i<G.size();++i)D[G[i]]=i;
+        while(getline(cin,S))
+    {
+        for(i=0;i<S.size();++i)
+            if(S[i]!=' ')S[i]=G[D[S[i]]-1] ;
+            cout<<S<<endl;
+    }
+}

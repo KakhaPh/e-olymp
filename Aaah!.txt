@@ -1,0 +1,11 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    string P,D;
+    cin>>P>>D;
+    if(P.size()<D.size())cout<<"no";
+    else cout<<"go";
+}

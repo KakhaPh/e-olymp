@@ -1,0 +1,23 @@
+#include <iostream>
+#include <algorithm> 
+
+using namespace std;
+
+int main()
+{
+    string S,P="",D;
+    getline(cin,S);
+    int i=0,j,N=S.size();
+    while((j=S.find("(",i))>=0)
+    {
+        P+=S.substr(i,j-i);
+        i=j+1;
+        j=S.find(")",i);
+        D=S.substr(i,j-i);
+        reverse(D.begin(),D.end());
+        P+=D;
+        i=j+1;
+    }
+    P+=S.substr(i);
+    cout<<P;
+}

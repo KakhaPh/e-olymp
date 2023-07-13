@@ -1,0 +1,16 @@
+#include <bits/stdc++.h>
+using namespace std;
+int D[26];
+int main()
+{
+           string S;
+           cin>>S;
+           int i,N=S.size(),j;
+           for(i=0;i<N;++i)
+               if(S[i]>'Z')++D[S[i]-'a'];
+               else ++D[S[i]-'A'];
+           for(i=25;!D[i];--i);
+           for(j=i-1;j>=0;--j)
+               if(D[j] && D[j]<D[i])i=j;
+           cout<<char(i+'A');
+}

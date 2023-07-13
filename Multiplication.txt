@@ -1,0 +1,35 @@
+#include <iostream>
+using namespace std;
+int D[1999];
+int DV(char C)
+{
+    if('0'<=C && C<='9')return C-'0';
+    if('a'<=C && C<='z')return C-'a'+10;
+    return C-'A'+36;
+}
+char VD(int X)
+{
+    if(X<10)return '0'+X;
+    if(X<36)return 'a'+X-10;
+    return 'A'+X-36;
+}
+int main()
+{
+    int P,i,j,K,N,M,C;
+    string A,B;
+    cin>>P>>A>>B;
+    if(A=="0"||B=="0"){cout<<0; return 0;}
+    N=A.size();M=B.size();
+    for(i=0;i<N;++i)
+        for(j=0;j<M;++j)
+            D[i+j]+=DV(A[N-1-i])*DV(B[M-1-j]);
+    for(K=i=0;i<N+M-1;++i)
+    {
+        C=D[i]+K;
+        D[i]=C%P;
+        K=C/P;
+    }
+    if(K)D[i++]=K;
+    while(i--)
+        cout<<VD(D[i]);
+}

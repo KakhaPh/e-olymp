@@ -1,0 +1,19 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
+int main()
+{
+    int T,P,i;
+    string S;
+    cin>>T;
+    while(T--)
+    {
+        cin>>S;
+        S='D'+S+"DD";
+        for(P=i=0;i<S.size();++i)
+            if(S[i]=='-' and S[i-1]!='S' and S[i+1]!='S' and S[i+1]!='B' and S[i+2]!='B')
+            P++;
+            cout<<P<<endl;
+    }
+}

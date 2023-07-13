@@ -1,0 +1,22 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int i,N=0; long long M;
+    multiset<long long>D;
+    while(cin>>M)
+        D.insert(M);
+    set<long long>DS(D.begin(),D.end());
+    if(DS.size()!=2)cout<<"NO";
+    else
+    {
+        set<long long>:: iterator X;
+        X=DS.begin();
+        if(D.count(*X)==1)cout<<(*X);
+        else {
+            ++X;
+            if(D.count(*X)==1)cout<<(*X);
+            else cout<<"NO";
+        }
+    }
+}

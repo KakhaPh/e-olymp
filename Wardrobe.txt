@@ -1,0 +1,27 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    int a, b, c, x, y;
+    cin >> a >> b >> c >> x >> y;
+
+    int possible = 0;
+
+    if (a <= x && b <= y)
+        possible = 1;
+    else if (a <= y && b <= x)
+        possible = 1;
+    else if (a <= x && c <= y)
+        possible = 1;
+    else if (a <= y && c <= x)
+        possible = 1;
+    else if (b <= x && c <= y)
+        possible = 1;
+    else if (b <= y && c <= x)
+        possible = 1;
+
+    if (possible)
+        cout << "YES" << endl;
+    else
+        cout << "NO" << endl;
+}

@@ -1,0 +1,13 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+    int N,i;
+    char P;
+    string S;
+    cin>>N>>S;
+    for(i=P=0;i<N;++i)
+        P^=S[i];
+    if(P)cout<<P;
+    else cout<<"Ok";
+}

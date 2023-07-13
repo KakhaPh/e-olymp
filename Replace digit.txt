@@ -1,0 +1,15 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    string S;char a,b;
+    int i;
+    cin>>S>>a>>b;;
+    for(i=0;i<S.size();++i)
+        if(S[i]==a)S[i]=b;
+    for(i=0;i<S.size()-1;++i)
+        if(S[i]!='0')break;
+    cout<<S.substr(i);
+}

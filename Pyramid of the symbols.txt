@@ -1,0 +1,10 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int K,P,D,i;
+    char H;
+    cin>>H>>K;
+    cout<<(3*K-1)*K/2<<endl;
+        for(P=K-1,D=i=1;i<=K;++i,D+=2,--P)cout<<string(P,' ')+string(D,H)<<endl;
+}

@@ -1,0 +1,21 @@
+#include <bits/stdc++.h>
+using namespace std;
+char S[10000001];
+int main()
+{
+    int T,N,P,p,i;
+    scanf("%d",&T);
+    while(T--)
+    {
+        scanf("%d %d %s",&N,&P,S);
+        cout<<N<<' ';
+        if(P==2)cout<<0<<endl;
+        else
+        {
+            --P;
+            for(i=p=0;i<strlen(S);p%=P,++i)
+                p+=S[i]-'0';
+            cout<<p<<endl;
+        }
+    }
+}

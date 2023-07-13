@@ -1,0 +1,14 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+   int L,W,H,K,P;
+        cin>>K;
+            while(K--)
+        {
+        cin>>L>>W>>H;
+            L=(L+W)*2*H;
+            P=L/16+(L%16>0);
+                cout<<P<<endl;
+        }
+}

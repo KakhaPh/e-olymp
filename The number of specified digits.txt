@@ -1,0 +1,13 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
+int main()
+{
+    int i,ans=0;
+    string N; char D;
+    cin>>N>>D;
+    for(i=0;i<N.size();++i)
+        ans+=N[i]==D;
+    cout<<ans;
+}

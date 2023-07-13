@@ -1,0 +1,40 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
+int main()
+{
+    vector<unsigned int>V;
+    int i,c; unsigned n;
+    while(cin>>n)
+        V.push_back(n);
+    int N=V.size()-1;
+    set<long long>D(V.begin(),V.begin()+N);
+    vector<int>C;
+    for(i=0;i<10;i++)
+        if(!D.count(i))C.push_back(i);
+    N=C.size();
+    //cout<<N<<' '<<n<<endl;
+    string ans="";
+    if(C[0]==0)
+    {
+     do
+     {
+      c=C[n%N]; n/=N;
+      ans=char('0'+c)+ans;
+     }
+     while(n);
+    }
+    else
+    {
+     n++;
+     do{
+      c=n%N; n/=N;
+      if(c==0)c=N,n--;
+      c=C[c-1];
+      ans=char('0'+c)+ans;
+     }
+     while(n);
+    }
+    cout<<ans;
+}

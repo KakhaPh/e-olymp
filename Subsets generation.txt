@@ -1,0 +1,21 @@
+#include <bits/stdc++.h>
+using namespace std;
+int SIM(int N)
+{
+    int P=0,i;
+    for(i=1;N;++i, N>>=1)
+        if(N&1)P=P*10+i;
+        return P;
+}
+int D[255];
+int main()
+{ 
+    int N,R,i;
+    cin>>N;
+    R=1<<N;
+    for(i=1;i<R;++i)
+        D[i-1]=SIM(i);
+    sort(D,D+R-1);
+    for(i=0;i<R-1;++i)
+        cout<<D[i]<<endl;
+}

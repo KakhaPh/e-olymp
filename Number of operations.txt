@@ -1,0 +1,12 @@
+#include <bits/stdc++.h>
+using namespace std;
+    int D[128];
+    int main(){
+    string S;
+    cin>>S;
+    int i,P=0;
+        D['-']=D['+']=D['*']=1;
+    for(i=1;i<S.size();++i)
+        P+=D[S[i]];
+       cout<<P;
+   }

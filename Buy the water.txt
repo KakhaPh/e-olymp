@@ -1,0 +1,10 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    short N;
+    cin>>N;
+    cout <<N-1;
+}

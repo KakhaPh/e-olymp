@@ -1,0 +1,14 @@
+#include <bits/stdc++.h>
+using namespace std;
+int A[128];
+int main()
+{
+    string S;
+    cin>>S;
+    int i,M=0;
+    A['L']=-1;A['R']=1;
+    set<int>D; D.insert(M);
+    for(i=0;i<S.size();++i,D.insert(M))
+        M+=A[S[i]];
+    cout<<D.size();
+}

@@ -1,0 +1,10 @@
+#include <iostream>
+using namespace std;
+ 
+int main() 
+{
+    int x;
+    cin >> x;
+    cout << (x<=3? "Initial" : (x<=6? "Average" : (x<=9? "Sufficient" : "High"))) << endl;
+	return 0;
+}

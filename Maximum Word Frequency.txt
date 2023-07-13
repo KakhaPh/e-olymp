@@ -1,0 +1,18 @@
+#include <bits/stdc++.h>
+using namespace std;
+string S[1000];
+int main(){
+        int n,k,p,h=0;
+        cin>>n;
+    string P;
+            for(k=0;k<n;++k)
+        cin>>S[k];
+        sort(S,S+n);
+            for(p=1,k=n-2;k>=0;--k)
+                if(S[k]==S[k+1])++p;
+                    else {
+                    if(p>h)h=p,P=S[k+1];p=1;
+                          }
+                    if(p>h)h=p,P=S[k+1];
+    cout<<P<<' '<<h;
+}

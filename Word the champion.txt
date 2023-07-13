@@ -1,0 +1,29 @@
+#include <bits/stdc++.h>
+using namespace std;
+set<char>D;
+int IsPal(string S)
+{
+    int L=0,N=S.size(),R=N-1;
+    if(D.count(S[R]))--R,--N;
+    for(;L<R;++L,--R)
+        if(S[L]!=S[R])return 0;
+    return N;
+}
+
+int main()
+{
+    string d=",;:.-!?";
+    D.insert(d.begin(),d.end());
+    string S;
+    int k,p=0,i=1,P=0;
+    cin>>S;
+    if(S[0]>='A' && S[0]<='Z')S[0]+='a'-'A';
+    if((k=IsPal(S))>p)p=k,P=i;
+    i=2;
+    while(cin>>S)
+    {
+        if((k=IsPal(S))>p)p=k,P=i;
+        ++i;
+    }
+    cout<<P;
+}

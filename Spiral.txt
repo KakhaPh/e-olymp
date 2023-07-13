@@ -1,0 +1,23 @@
+#include <bits/stdc++.h>
+using namespace std;
+int A[102][102];
+int main()
+{
+    int Di[]={0,1,0,-1},Dj[]={1,0,-1,0},m=0,i,j,N,K=1,NN;
+    cin>>N;
+    NN=N*N;
+    for(i=0;i<N+2;++i)
+        A[0][i]=A[N+1][i]=-1;
+    for(i=1;i<N+1;++i)
+        A[i][0]=A[i][N+1]=-1;
+    i=1; j=0;
+    while(K<=NN)
+    {
+        if(A[i+Di[m]][j+Dj[m]])++m,m&=3; // m%=4;
+        i+=Di[m];j+=Dj[m];
+        A[i][j]=K++;
+    }
+    for(i=1;i<N+1;++i,cout<<endl)
+        for(j=1;j<N+1;++j)
+        cout<<A[i][j]<<' ';
+}

@@ -1,0 +1,22 @@
+#include <bits/stdc++.h>
+using namespace std;
+int K(long long P)
+{
+    long long i;
+    if(P<4)return P!=1;
+    if((P&1)==0 ^ P%3==0)return 0;
+    for(i=5;i*i<=P;i+=2) if(P%i==0)return 0;return 1;
+}
+int main()
+{
+    long long R,P,i,D=10,H=1;
+    cin>>R;
+    while(H)
+    {
+        for(P=R*D,i=1;H&&i<D;i+=2) if(K(P+i))
+        {
+            cout<<P+i;H=0;
+        }
+            if(H)D*=10;
+    }
+}

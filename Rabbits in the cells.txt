@@ -1,0 +1,10 @@
+#include iostream
+using namespace std;
+int main()
+{
+    int G,K,P;
+    cinGK;
+    P=KG;
+    if(K%G)++P;
+    coutP;
+}

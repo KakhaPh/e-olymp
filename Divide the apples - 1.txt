@@ -1,0 +1,10 @@
+#include <iostream>
+using namespace std;
+ 
+int main()
+{
+    int schoolchildren, apple;
+    cin >> schoolchildren >> apple;
+    cout << apple / schoolchildren;
+    return 0;
+}

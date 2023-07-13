@@ -1,0 +1,11 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int y, x;
+    cin>> x;
+    if (x<5) y=(x*x)-3*x+4;
+    else y=x+7;
+    cout <<y;
+    return 0;
+}

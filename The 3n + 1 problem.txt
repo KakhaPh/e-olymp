@@ -1,0 +1,32 @@
+#include <iostream>
+using namespace std;
+
+int length(int ch) {
+    int it = 1;
+    while (ch != 1) {
+        if (ch % 2 == 1) {
+            ch = ch * 3 + 1;
+        }
+        else {
+            ch = ch / 2;
+        }
+        it++;
+    }
+    return it;
+}
+
+int main() {
+    int i, j;
+    while(cin >> i) {
+        cin >> j;
+        int it, maxIt = 0;
+        for (int a = min(i, j); a <= max(i, j); a++) {
+            it = length(a);
+            if (it > maxIt) {
+                maxIt = it;
+            }
+        }
+        cout << i << ' ' << j << ' ' << maxIt << endl;
+    }
+    return 0;
+}

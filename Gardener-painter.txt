@@ -1,0 +1,9 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main() { long int K,P;
+             cin >> K;
+     if (K>=1 && K<=50){
+         P=3*pow(2,K-1);
+    	 cout<<P;
+     }
+}

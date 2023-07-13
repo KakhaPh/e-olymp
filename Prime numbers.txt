@@ -1,0 +1,23 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
+int IsPrime(long long N)
+{
+    if(N<4)return N!=1;
+    if((N&1)==0 || N%3==0)return 0;
+    long long i;
+    for(i=5;i*i<=N;i+=2)
+        if(N%i==0)return 0;
+    return 1;    
+}
+
+
+int main()
+{
+    long long N,M,K=0;
+    cin>>N>>M;
+    for(;N<=M;++N)
+        if(IsPrime(N))K=1,cout<<N<<endl;
+    if(!K)cout<<"Absent";
+}

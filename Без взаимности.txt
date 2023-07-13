@@ -1,0 +1,29 @@
+#include <bits/stdc++.h>
+using namespace std;
+long long Saxe(long long N)
+{
+    short sg=N<0;
+    if(sg)N=-N;
+    stringstream SS; string S,M,P;
+    SS<<N; SS>>S;
+    M=P=S;
+    M=M.substr(1)+M[0];
+    while(M!=S)
+    {
+        if(M>P)P=M;
+        M=M.substr(1)+M[0];
+    }
+    SS.clear();
+    SS<<P; SS>>N;
+    if(sg)N=-N;
+    return N;
+}
+int main()
+{
+    int N;long long M;
+    set<long long>D;
+    cin>>N;
+    while(N--)
+        cin>>M,D.insert(Saxe(M));
+    cout<<D.size();
+}

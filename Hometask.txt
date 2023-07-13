@@ -1,0 +1,22 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
+int IsPrime(long long N)
+{
+    if(N<4)return N!=1;
+    if((N&1)==0 || N%3==0)return 0;
+    long long i;
+    for(i=5;i*i<=N;i+=2)
+        if(N%i==0)return 0;
+    return 1;    
+}
+
+
+int main()
+{
+    int N;
+    cin>>N;
+    if(N==4 || IsPrime(N))cout<<"NO";
+    else cout<<"YES";
+}

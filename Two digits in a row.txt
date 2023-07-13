@@ -1,0 +1,9 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+    short N;
+    cin>>N;
+    if(N/100==37 || N/10%100==37 || N%100==37)cout<<"YES";
+    else cout<<"NO";
+}

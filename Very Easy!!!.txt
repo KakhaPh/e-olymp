@@ -1,0 +1,13 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main(){
+    
+    long long n,a,A,P=0,i;
+    cin>>n>>a;
+    if(a==1) if(n&1)P=n*(n+1>>1);
+             else P=(n>>1)*(n+1);
+    else
+    for(A=a,i=1;i<=n;++i,A*=a)
+        P+=i*A;
+    cout<<P;
+}

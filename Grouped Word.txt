@@ -1,0 +1,102 @@
+#include <bits/stdc++.h>
+using namespace std;
+short IsGroupped(string S)
+{
+    int N=S.size(),i;
+    if(N<3)return 1;
+    set<char>D;
+    D.insert(S[0]);
+    for(i=1;i<N;++i)
+        if(S[i]!=S[i-1])
+        {
+            if(D.count(S[i]))return 0;
+            D.insert(S[i]);
+        }
+    return 1;
+}
+set<char>Tanakveta(set<char>A,set<char>B)
+{
+    set<char>D;
+    set<char>:: iterator X;
+    for(X=A.begin();X!=A.end();++X)
+        if(B.count(*X))D.insert(*X);
+    return D;
+}
+set<char>Tanakveta(string A,string B)
+{
+    set<char>SA(A.begin(),A.end()),SB(B.begin(),B.end());
+    return Tanakveta(SA,SB);
+}
+int main()
+{
+    int N,K; string S,SS;
+    while(cin>>N)
+    {
+        map<char,int>FF;
+        map<char,string>F,L;
+        while(N--)
+        {
+            cin>>S;
+            K=S.size();
+            if(IsGroupped(S))
+               {
+                  if(S[0]==S[K-1])FF[S[0]]+=K;
+                  else
+                  {
+                      if(F.count(S[0]) || L.count(S[K-1]))break;
+                      F[S[0]]=L[S[K-1]]=S;
+                  }
+               }
+            else break;
+        }
+               //cout<<FF.size()<<' '<<F.size()<<' '<<L.size()<<endl;
+               if(N>-1){cout<<"IMPOSSIBLE"<<endl; while(N--)cin>>S; continue;}
+               map<char,string>:: iterator X,Y;
+               int ER=0; char C;
+               for(X=L.begin();!ER && X!=L.end();)
+               {
+                   C=X->first;
+                   S=L[C];
+                   if(FF.count(C)){S+=string(FF[C],C);FF.erase(C);L[C]=F[S[0]]=S;}
+                   if(FF.count(S[0])){S=string(FF[S[0]],S[0])+S;
+                                     FF.erase(S[0]);L[C]=F[S[0]]=S;}
+                   //cout<<"L["<<C<<"]="<<L[C]<<endl;
+                   if(F.count(C)){
+                       Y=X;
+                       ++Y;
+                       SS=F[C];
+                       if(Tanakveta(S,SS).size()>1){ER=1;continue;}
+                       S+=SS;
+                       L.erase(C);F.erase(C);
+                       F[S[0]]=L[S[S.size()-1]]=S;
+                       X=Y;
+                   }
+                   else ++X;
+               }
+               if(F.size()==0 && FF.size()==1){
+                   C=FF.begin()->first;
+                   cout<<string(FF[C],C)<<endl;
+                   continue;
+               }
+               if(F.size()==1 && FF.size()==0){
+                   cout<<S<<endl;
+                   continue;
+               }
+               S="";
+               for(X=F.begin();!ER && X!=F.end();++X)
+               {
+                   SS=X->second;
+                   if(Tanakveta(S,SS).size())ER=1;
+                   else S+=SS;
+               }
+               map<char,int>::iterator Z;
+               set<char>DS(S.begin(),S.end());
+               for(Z=FF.begin();!ER && Z!=FF.end();++Z)
+               {
+                   C=Z->first;
+                   ER=DS.count(C);
+               }
+               if(ER)cout<<"IMPOSSIBLE"<<endl;
+               else cout<<"MANY"<<endl;
+    }
+}

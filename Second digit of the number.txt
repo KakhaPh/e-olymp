@@ -1,0 +1,10 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main(){
+    long long K;
+    cin>>K;
+             if(K<0)K=-K;
+                 while(K>=100)
+                 K/=10;
+    K%=10; cout<<K<<endl;
+}

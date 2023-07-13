@@ -1,0 +1,18 @@
+#include <iostream>
+
+#include <string>
+
+#include <algorithm>
+
+using namespace std;
+
+int main()
+{
+	string k;
+    string p;
+	cin >> k >> p;
+	sort(k.begin(), k.end());
+	sort(p.begin(), p.end());
+	cout << (k == p ? "YES" 
+             : "NO") << endl;
+}

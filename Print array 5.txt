@@ -1,0 +1,19 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    short K,P,D[100],i;
+    cin>>K; i=0;
+    while(K--)
+    {
+        cin>>P; if(P&1);
+                else D[i++]=P;
+    }
+         K=i; if(K==0)cout<<"NO"; else
+                                        {
+                                          cout<<K<<endl;
+                                            for(i=K-1;i>=0;--i)
+                                                cout<<D[i]<<" ";
+    }
+    return 0;
+}

@@ -1,0 +1,26 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    int a, b, c, d, k, p;
+	cin >> a >> b >> c >> d;
+	k = d;
+	p = 1;
+	while (k > a / b)
+	{
+		k -= a / b;
+		p++;
+	}
+	cout << p << " ";
+	k = d;
+	p = 1;
+	while (d > a / (b*c))
+	{
+		d -= a / (b*c);
+		p++;
+		if (p == c + 1) p = 1;
+	}
+	cout << p << endl;
+
+}

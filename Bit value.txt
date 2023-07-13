@@ -1,0 +1,14 @@
+#include <iostream>
+
+using namespace std;
+
+int main() {
+	
+    int k, p;
+	
+    cin >> k >> p;
+	
+    printf("%d\n", (k & 1 << p) > 0);
+	
+    return 0;
+}

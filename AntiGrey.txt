@@ -1,0 +1,32 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
+int HD[128];
+
+int main()
+{
+
+    string S;
+    cin>>S;
+    string D = "0123456789ABCDEF";
+    int K=0, i, N = S.size();
+    
+    for(i=0; i<16; i++) {
+        HD[D[i]] = i;
+    }
+    
+    for (i = 0; i<N; i++) {
+        int d = HD[S[i]], dd=d;
+        if (K) d|=16;
+        d>>=1;        
+        while(d) {
+            dd^=d; 
+            d>>=1;
+        }
+        S[i] = D[dd];
+        K=dd&1;
+    }
+    
+    cout << S;
+}

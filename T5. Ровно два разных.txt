@@ -1,0 +1,18 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main(){
+    int K=0,max=0,G,P,i; 
+    long long M,N, D[30];
+    while(cin>>M)
+          D[K++]=M;
+    sort(D,D+K);
+    for(N=D[0],G=i=P=1;G<=2 && i<K; ++i)
+        if(D[i]!=D[i-1])
+    {
+        ++G; if(P>max)max=P,N=D[i-1];P=1;
+    }else 
+        ++P; if(G!=2)cout<<"NO"; else
+    {
+        if(P>max)N=D[i-1];cout<<N<<endl;
+    }
+}

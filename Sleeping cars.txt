@@ -1,0 +1,16 @@
+//g++  5.4.0
+
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    string S;
+    cin>>S;
+    int i,ans,m;
+    for(ans=m=i=0;i<S.size();++i)
+        if(S[i]=='k')ans=max(++m,ans);
+        else m=0;
+    cout<<ans;
+}

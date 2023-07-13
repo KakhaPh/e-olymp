@@ -1,0 +1,15 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+    int K,P=0;
+    double H;
+    cin>>H>>K;
+    H/=K;
+    while(H>1)
+    {
+        ++P;
+        H/=K;
+    }
+    cout<<P;
+}

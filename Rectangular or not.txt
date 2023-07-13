@@ -1,0 +1,10 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main(){
+ long k,p,h;
+ cin>>k>>p>>h;
+ cout << (((k*k)+(p*p))==(h*h)^
+         ( (k*k)+(h*h))==(p*p)^
+         ( (h*h)+(p*p))==(k*k)
+            ?"YES":"NO");
+}

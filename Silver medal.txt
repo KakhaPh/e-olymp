@@ -1,0 +1,18 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
+int main()
+{
+    int N,Q;
+    cin>>N;
+    set<int>D;
+    while(N--)
+    {
+        cin>>Q;
+        D.insert(Q);
+    }
+    set<int>::iterator P;
+    P=D.end();--P;--P;
+    cout<<*P;
+}
