@@ -1,0 +1,13 @@
+#include <bits/stdc++.h>
+using namespace std;
+short A[100];
+int main()
+{
+    short N,i,j,P=0,K;
+    for(cin>>N>>K,i=0;i<N;++i)
+        cin>>A[i];
+    for(i=0;i<N-1;++i)
+        for(j=i+1;j<N;++j)
+            P+=!((A[i]+A[j])%K);
+    cout<<P;
+}

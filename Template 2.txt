@@ -1,0 +1,15 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int N,i,j,K;
+    cin>>N;
+    for(i=0;i<N;++i)
+    {
+        K=i&3;
+        if(!(K&1))for(j=0;j<N;++j)cout<<'*';
+            else if(K==1){for(j=1;j<N;++j)cout<<' ';cout<<'*';}
+                 else cout<<'*';
+        cout<<endl;
+    }
+}

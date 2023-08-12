@@ -1,0 +1,15 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main() {
+string a, b;
+cin >>a;
+int x,y;
+cin >>x>>y;
+cout <<y-x+2<<endl;
+x--;
+y--;
+for (int i = x;i<y;i++){
+b=b+a[i];
+cout <<b<<endl;
+}
+}

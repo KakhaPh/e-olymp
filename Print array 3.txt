@@ -1,0 +1,23 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    short N,M,i,K;
+    cin>>N;
+    for(i=0;i<N;++i)
+    {
+        cin>>M;
+        if(M>0)break;
+    }
+    if(i==N){cout<<"NO";return 0;}
+    vector<short>A(1,M);
+    for(++i;i<N;++i)
+        {
+            cin>>M;
+            if(M>0)A.push_back(M);
+        }
+    K=A.size();
+    cout<<K<<endl;
+    for(i=0;i<K;++i)
+            cout<<A[i]<<' ';
+}

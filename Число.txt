@@ -1,0 +1,17 @@
+#include <bits/stdc++.h>
+using namespace std;
+string D[100];
+int F(string A,string B)
+{
+    return A+B>B+A;
+}
+int main()
+{
+    int i,N=0;
+    string S;
+    while(cin>>S)
+        D[N++]=S;
+    sort(D,D+N,F);
+    for(i=0;i<N;++i)
+        cout<<D[i];
+}

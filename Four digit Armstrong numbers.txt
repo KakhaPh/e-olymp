@@ -1,0 +1,15 @@
+#include <iostream>
+using namespace std;
+int Armstrong(short N)
+{
+    int a,b,c,d;
+    a=N/1000; b=N/100%10; c=N/10%10; d=N%10;
+    return N==a*a*a*a+b*b*b*b+c*c*c*c+d*d*d*d;
+}
+int main()
+{
+    short A,B;
+    cin>>A>>B;
+   for(;A<=B;++A)
+        if(Armstrong(A))cout<<A<<' ';
+}

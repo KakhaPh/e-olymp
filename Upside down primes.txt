@@ -1,0 +1,38 @@
+#include <bits/stdc++.h>
+using namespace std;
+int IsPrime(long long N)
+{
+    if(N<4)return N!=1;
+    if(!(N&1))return 0;
+    if(N%3==0)return 0;
+    int d=2;
+    for(long long i=5;i*i<=N;i+=d,d=6-d)
+        if(N%i==0)return 0;
+    return 1;
+}
+char C[10]={'0','1','2','E','E','5','9','E','8','6'};
+long long GR(long long N)
+{
+    stringstream SS;
+    SS<<N;
+    string S,D="";
+    SS>>S;
+    int i;
+    for(i=S.size()-1;i>=0;--i)
+        D+=C[S[i]-'0'];
+    i=D.find('E');
+    if(i>=0)return 0;
+    SS.clear();
+    SS<<D;
+    SS>>N;
+    //cout<<N<<endl;
+    return IsPrime(N);
+}
+int main()
+{
+    long long N;
+    cin>>N;
+    if(!IsPrime(N)){cout<<"no"; return 0;}
+    if(GR(N))cout<<"yes";
+    else cout<<"no";
+}

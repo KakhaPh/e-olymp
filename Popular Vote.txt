@@ -1,0 +1,23 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+    short T,N,i,j,K;
+    int M,J,V;
+    cin>>T;
+    while(T--)
+    {
+        cin>>N>>M;
+        J=M;K=i=j=1;
+        while(--N)
+        {
+            cin>>V;
+            ++j; J+=V;
+            if(V>M)M=V,K=1,i=j;
+            else K+=V==M;
+        }
+        if(K>1)cout<<"no winner"<<endl;
+        else if(2*M>J)cout<<"majority winner "<<i<<endl;
+             else cout<<"minority winner "<<i<<endl; 
+    }
+}

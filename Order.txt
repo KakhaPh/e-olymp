@@ -1,0 +1,32 @@
+#include bitsstdc++.h
+using namespace std;
+int main()
+{
+    string N;
+    int K,L,i,dK,dL,M,n,LK;
+    unsigned long long P=0;
+    cinNKL;
+    vectorintCK(K),CL(L);
+    for(i=0;iK;++i)
+        cinCK[i];
+    for(i=0;iL;++i)
+        cinCL[i];
+    sort(CK.begin(),CK.end());
+    sort(CL.begin(),CL.end());
+    mapchar,intDK,DL;
+    dK=CK[0]!=0; dL=CL[0]!=0;
+    for(i=0;iK;++i)DK['0'+CK[i]]=i+dK;
+    for(i=0;iL;++i)DL['0'+CL[i]]=i+dL;
+    n=N.size();
+    M=(n&1)KL;
+    LK=n&1;
+    K+=L;
+    for(i=0;in;++i,M=K-M,LK=!LK)
+    {
+        P=M;
+        if(LK)P+=DK[N[i]];
+        else P+=DL[N[i]];
+    }
+    P+=!dK;
+    coutP;
+}

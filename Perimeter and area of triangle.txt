@@ -1,0 +1,17 @@
+#include <bits/stdc++.h>
+using namespace std;
+double Dt(double X1,double Y1,double X2, double Y2)
+{
+    return sqrt((X2-X1)*(X2-X1)+(Y2-Y1)*((Y2-Y1)));
+}
+int main()
+{
+    double x1, y1, x2, y2, x3, y3, a, b, c, S;
+    cin>>x1>>y1>>x2>>y2>>x3>>y3;
+    a=Dt(x1,y1,x2,y2);
+    b=Dt(x1,y1,x3,y3);
+    c=Dt(x2,y2,x3,y3);
+    S=.25*sqrt((a+b+c)*(b+c-a)*(a+c-b)*(a+b-c));
+    cout<<fixed<<setprecision(4)<<a+b+c<<' '<<S;
+    
+}

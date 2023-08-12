@@ -1,0 +1,9 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+    int X;
+    cin>>X;
+    if(X>=0)cout<<X*(X*(X+2)+4)-6;
+    else cout<<X*(X*X-7);
+}

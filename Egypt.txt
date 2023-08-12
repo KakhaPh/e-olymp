@@ -1,0 +1,14 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int A,B,C;
+    cin>>A>>B>>C;
+    while(A && B && C)
+    {
+        A*=A; B*=B; C*=C;
+        if(A+B==C || A+C==B || B+C==A)cout<<"right\n";
+        else cout<<"wrong\n";
+        cin>>A>>B>>C;
+    }
+}

@@ -1,0 +1,16 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+    string S;
+    int N,G=0,i,K;
+    cin>>N;
+    while(N--)
+    {
+        cin>>S;
+        for(K=S.size(),i=0;i<K-1;++i)
+            if(S.substr(i,2)=="CD")break;
+        G+=i==K-1;
+    }
+    cout<<G;
+}

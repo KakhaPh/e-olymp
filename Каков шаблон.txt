@@ -1,0 +1,14 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+    string Tr;
+    cin>>Tr;
+    int i=0,N=Tr.size(),L=0,K;
+    do
+        K=1-(Tr[i++]-'0'),
+        L+=K;
+    while(L>0 && i<N);
+    if(i==N && L==1)cout<<"OK";
+    else cout<<"ERROR IN "<<i-(i<N || L<1);
+}

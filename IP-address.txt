@@ -1,0 +1,10 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+    int a,b,c,d;
+    char D;
+    cin>>a>>D>>b>>D>>c>>D>>d;
+    cout<<(0<=a && a<=255 && 0<=b && b<=255 
+           && 0<=c && c<=255 && 0<=d && d<=255);
+}

@@ -1,0 +1,20 @@
+#include <bits/stdc++.h>
+using namespace std;
+int St[100];
+int main()
+{
+    string S,D;
+    int K=0,N;
+    while(getline(cin,S))
+    {
+        D=S.substr(0,2);
+        if(D=="ex"){cout<<"bye\n";break;}
+        if(D=="ba"){cout<<St[K-1]<<endl;continue;}
+        if(D=="po"){cout<<St[K-1]<<endl;--K;continue;}
+        if(D=="si"){cout<<K<<endl;continue;}
+        if(D=="cl"){cout<<"ok\n";K=0;continue;}
+        stringstream SS(S);
+        SS>>S>>N;
+        St[K++]=N; cout<<"ok"<<endl;
+    }
+}

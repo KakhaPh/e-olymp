@@ -1,0 +1,8 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    double N,K,L;
+    while(cin>>N>>K>>L)
+        cout<<fixed<<setprecision(4)<<N+K+L<<endl;
+}

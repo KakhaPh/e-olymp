@@ -1,0 +1,14 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int N,i; double M;
+    cin>>N;
+    for(i=1;i<=N;++i)
+    {
+        cin>>M;
+        if(M<=2.5)break;
+    }
+    if(i<=N)cout<<i<<' '<<fixed<<setprecision(2)<<M;
+    else cout<<"Not Found";
+}

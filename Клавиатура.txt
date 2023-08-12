@@ -1,0 +1,9 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    short N,M;
+    cin>>N>>M;
+    if((N>>M)&1)cout<<"YES";
+    else cout<<"NO";
+}

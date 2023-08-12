@@ -1,0 +1,31 @@
+#include <iostream>
+using namespace std;
+int Mx[10001],Mn[10001];
+int main()
+{
+    int N,A,W,P,i,j,p[500],w[500];
+    cin>>A>>W>>N;
+    W-=A;
+    for(i=0;i<N;++i)
+        cin>>p[i]>>w[i];
+    for(i=1;i<=W;++i)
+        for(j=0;j<N;++j)
+            {
+                if(w[j]>i)continue;
+                if(w[j]==i)
+                {
+                    if(Mx[i]<p[j])Mx[i]=p[j];
+                    if(!Mn[i] || Mn[i] && Mn[i]>p[j])Mn[i]=p[j];
+                }
+                else if(Mx[i-w[j]]) 
+                        {
+                            if(Mx[i]<Mx[i-w[j]]+p[j])Mx[i]=Mx[i-w[j]]+p[j];
+                            if(!Mn[i] || Mn[i]>Mn[i-w[j]]+p[j])Mn[i]=Mn[i-w[j]]+p[j];
+                        }
+            }
+    //for(j=0;j<=W;++j)
+    //    cout<<j<<' '<<Mx[j]<<' '<<Mn[j]<<endl;
+    if(Mx[W])
+        cout<<Mn[W]<<' '<<Mx[W];
+    else cout<<"This is impossible.";
+}

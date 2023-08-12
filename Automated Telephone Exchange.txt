@@ -1,0 +1,10 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+    short N,i,j,P=0;
+    cin>>N;
+    if(N>=199)P=0;
+    else P=199-N;
+    cout<<P;
+}

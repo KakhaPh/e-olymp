@@ -1,0 +1,14 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    short N,T,M,J=0,P=0;
+    cin>>N>>T;
+    while(N--)
+    {
+        cin>>M;
+        if((J+=M)>T)break;
+        ++P;
+    }
+    cout<<P;
+}

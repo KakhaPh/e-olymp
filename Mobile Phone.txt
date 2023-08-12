@@ -1,0 +1,18 @@
+#include <bits/stdc++.h>
+using namespace std;
+short C[10];
+int main()
+{
+    string MN;
+    getline(cin,MN);
+    vector<short>V;
+    short R=0,i;
+    for(i=0;i<MN.size();++i)
+        if('0'<=MN[i] && MN[i]<='9')C[MN[i]-'0']=1;
+    for(i=0;i<10;++i)
+        if(C[i]);else ++R,V.push_back(i);
+    cout<<R<<endl;
+    if(R)
+    for(i=0;i<R;++i)
+        cout<<V[i]<<' ';
+}

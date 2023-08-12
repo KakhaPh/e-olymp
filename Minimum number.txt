@@ -1,0 +1,17 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main(){
+    int i; char j;
+    set<char>D;
+    string s;
+    getline(cin,s);
+    for(i=0;i<s.size();++i){
+        if(s[i]>='1' && s[i]<='9')D.insert(s[i]);
+    }
+    if(D.size()==9)cout<<"0";
+    else {
+        for(j='1';j<='9';++j){
+             if(!D.count(j))cout<<j;
+        }
+    }
+}

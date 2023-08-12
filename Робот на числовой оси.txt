@@ -1,0 +1,22 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+    string M="SRL",P="";
+    char C;
+    long long N;
+    short sg;
+    cin>>N;
+    sg=N<0;
+    if(sg)N=-N;
+    do
+    {
+        C=M[N%3];
+        N/=3;
+        if(C=='L')++N;
+        if(sg && C!='S')C=M[1+(C=='R')];
+        P+=C;
+    }
+    while(N);
+    cout<<P;
+}

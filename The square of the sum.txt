@@ -1,0 +1,9 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+    short N,K;
+    cin>>N;
+    K=N/10+N%10;
+    cout<<K*K;
+}

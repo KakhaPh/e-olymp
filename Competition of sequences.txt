@@ -1,0 +1,25 @@
+#include <bits/stdc++.h>
+using namespace std;
+int A[100000];
+int main()
+{
+    int N,i,j,K;
+    cin>>N;
+    for(i=0;i<N;++i)
+        cin>>A[i];
+    K=0;
+    i=0;j=N-1;
+    while(i<j)
+    {
+        for(;i<=j;++i)
+            if(A[i]==K+1)break;
+        if(i<=j)++K;
+        else break;
+        for(;i<j;--j)
+            if(A[j]==K)break;
+        if(i<j);
+        else break;
+        //cout<<i<<' '<<j<<' '<<K<<endl;
+    }
+    cout<<K;
+}

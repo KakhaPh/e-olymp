@@ -1,0 +1,13 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int N,P,M;
+    cin>>N>>P;
+    while(--N)
+    {
+        cin>>M;
+        P=max(P,M);
+    }
+    cout<<P;
+}

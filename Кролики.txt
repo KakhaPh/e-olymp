@@ -1,0 +1,14 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int N,K,R=1,i=0;
+    cin>>N>>K;
+    while(i<N)
+    {
+        ++i;
+        if(R>K)R-=K;
+        R<<=1;
+    }
+   cout<<R; 
+}

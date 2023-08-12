@@ -1,0 +1,20 @@
+#include <iostream>
+using namespace std;
+int GCD(int N,int M)
+{
+    while(N && M)
+        if(N>M)N%=M;
+        else M%=N;
+    return N+M;
+}
+int main()
+{
+    int N,M,P;
+    cin>>N>>P;
+    while(--N)
+    {
+        cin>>M;
+        P=GCD(P,M);
+    }
+    cout<<P;
+}

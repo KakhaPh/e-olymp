@@ -1,0 +1,25 @@
+#include <bits/stdc++.h>
+using namespace std;
+string NP(string S)
+{
+    int i,j,k,N=S.size();
+    for(i=N-2;i>=0;--i)
+        if(S[i]<S[i+1])break;
+    if(i<0)return "";
+    for(j=i+1,k=j+1;k<N;++k)
+        if(S[k]>S[i] && S[k]<S[j])j=k;
+    swap(S[i],S[j]);
+    sort(S.begin()+i+1,S.end());
+    return S;
+}
+int main()
+{
+    string S;
+    cin>>S;
+    sort(S.begin(),S.end());
+    while(S!="")
+    {
+        cout<<S<<endl;
+        S=NP(S);
+    }
+}

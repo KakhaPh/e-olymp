@@ -1,0 +1,27 @@
+#include <bits/stdc++.h>
+using namespace std;
+int A[24];
+int main()
+{
+    int N,S,P,i,j,n,m,D[]={-1,1};
+    cin>>N>>S;
+    for(i=0;i<N;++i)
+        cin>>A[i];
+    n=1<<N-1;
+    //cout<<n<<endl;
+    for(i=0;i<n;++i)
+    {
+        for(P=A[0],m=i,j=1;j<N;++j,m>>=1)
+            P+=D[m&1]*A[j];
+        //cout<<i<<' '<<P<<endl;
+        if(P==S)break;
+    }
+    if(P!=S)cout<<"No solution"<<endl;
+    else
+    {
+        string sg="-+";
+        for(cout<<A[0],j=1;j<N;++j,i>>=1)
+            cout<<sg[i&1]<<A[j];
+        cout<<"="<<S;
+    }
+}

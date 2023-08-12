@@ -1,0 +1,13 @@
+#include <bits/stdc++.h>
+using namespace std;
+int A[10000];
+int main()
+{
+    int N,i,J,P=0;
+    cin>>N;
+    for(J=i=0;i<N;J+=A[i++])
+        cin>>A[i];
+    for(i=0;i<N;++i)
+        P+=N*A[i]>J;
+    cout<<P;
+}

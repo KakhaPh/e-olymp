@@ -1,0 +1,22 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int T,i;
+    string D="01";
+    cin>>T;
+    for(i=1;i<=T;++i)
+    {
+        int N,K;
+        string P="";
+        cin>>N;
+        do
+        {
+            K=N&1;
+            P=D[K]+P;
+            N=(N-K)/(-2);
+        }
+        while(N);
+        cout<<"Case #"<<i<<": "<<P<<endl;
+    }
+}

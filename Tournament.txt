@@ -1,0 +1,15 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    short N,F,S,L=0;
+    cin>>N;
+    while(N--)
+    {
+        cin>>F>>S;
+        if(F>S)++L;
+        else if(F<S)--L;
+    }
+    L=(L>0)+2*(L<0);
+    cout<<L;
+}

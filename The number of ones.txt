@@ -1,0 +1,23 @@
+#include <bits/stdc++.h>
+using namespace std;
+int D[5000]={0,1,2,3,4,5};
+int R(int N)
+{
+    if(D[N])return D[N];
+    int P,i,M;
+    P=R(N-1)+1;
+    for(i=2,M=N;i*i<=M;++i)
+        if(M%i==0)
+        {
+            while(M%i==0)M/=i;
+            P=min(P,R(N/i)+R(i));
+        }
+    if(M>1 && M<N)P=min(P,R(N/M)+R(M));
+    return D[N]=P;
+}
+int main()
+{
+    int N;
+    cin>>N;
+    cout<<R(N);
+}

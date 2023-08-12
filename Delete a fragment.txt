@@ -1,0 +1,10 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+    string S;
+    int F,L;
+    getline(cin,S);
+    cin>>F>>L;
+    cout<<S.substr(0,F)+S.substr(L+1);
+}

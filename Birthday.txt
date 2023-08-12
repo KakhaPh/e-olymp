@@ -1,0 +1,24 @@
+#include <iostream>
+using namespace std;
+short d,t,w;
+void NextDate()
+{
+    short M[13]={0,31,28,31,30,31,30,31,31,30,31,30,31};
+    M[2]+=!(w%4) && w%100 || !(w%400);
+    if(d<M[t])++d;
+    else {
+        d=1;++t;
+        if(t==13)t=1,++w;
+    }
+}
+int main()
+{
+    short DD,DT,P=0;
+    cin>>DD>>DT>>d>>t>>w;
+    while(!(DD==d && DT==t))
+    {
+        NextDate();
+        ++P;
+    }
+    cout<<P<<endl;
+}

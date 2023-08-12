@@ -1,0 +1,24 @@
+#include <iostream>
+using namespace std;
+int main()
+{int H1,M1,H2,M2,T1,T2,T; char c;
+cin>>H1>>c>>M1>>H2>>c>>M2;
+T1=H1*60+M1; T2=H2*60+M2;
+T2-=T1;
+if(T2<-12*60)T2+=24*60;
+else if(T2>12*60)T2-=24*60;
+T=T2;
+cin>>H1>>c>>M1>>H2>>c>>M2;
+T1=H1*60+M1; T2=H2*60+M2;
+T2-=T1;
+if(T2<-12*60)T2+=24*60;
+else if(T2>12*60)T2-=24*60;
+T+=T2;
+if(T<0)T+=24*60;
+if(T)T=T/2+(T%2);
+else T=12*60;
+H1=T/60;
+M1=T%60;
+cout<<H1/10<<H1%10<<':'<<M1/10<<M1%10<<endl;
+return 0;  
+}

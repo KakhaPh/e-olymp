@@ -1,0 +1,23 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    short N,i;
+    int Mn1,Mn2,M;
+    cin>>N>>Mn1;
+    for(i=1;;++i)
+    {
+        cin>>M;
+        if(M!=Mn1)break;
+    }
+    if(M<Mn1)Mn2=Mn1,Mn1=M;
+    else Mn2=M;
+    for(++i;i<N;++i)
+    {
+        cin>>M;
+        if(M>=Mn2 || M==Mn1)continue;
+        if(M<Mn1)Mn2=Mn1,Mn1=M;
+        else Mn2=M;
+    }
+    cout<<Mn1<<' '<<Mn2;
+}

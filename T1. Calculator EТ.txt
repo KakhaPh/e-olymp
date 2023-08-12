@@ -1,0 +1,14 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int N;
+    cin>>N;
+    string P="";
+    while(N>1)
+    {
+        if(N%3)--N,P='1'+P;
+        else N/=3,P='3'+P;
+    }
+    cout<<P;
+}

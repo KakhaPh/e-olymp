@@ -1,0 +1,14 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+    int N;
+    short A,B,C;
+    cin>>N;
+    A=N/100;B=N/10%10;C=N%10;
+    if(A<B)swap(A,B);
+    if(B<C)swap(B,C);
+    if(A<B)swap(A,B);
+    N=A*100+B*10+C;
+    cout<<N*N;
+}

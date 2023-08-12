@@ -1,0 +1,22 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    string A,B,D="01";
+    cin>>A>>B;
+    int i,K=0,C,Na=A.size(),Nb=B.size(),N;
+    if(Na>Nb)N=Na,B=string(Na-Nb,'0')+B;
+    else N=Nb,A=string(Nb-Na,'0')+A;
+    for(i=N-1;i>=0;--i)
+    {
+        C=(A[i]-'0')+(B[i]-'0')+K;
+        K=C>>1;
+        A[i]=D[C&1];
+    }
+    while(K)
+    {
+        A=D[K&1]+A;
+        K>>=1;
+    }
+    cout<<A;
+}

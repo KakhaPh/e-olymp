@@ -1,0 +1,25 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+    int S,K,A,B,d,s,df=-1;    
+    cin >>S>>K>>A>>B;   
+    d = A/K;
+    s = A%K;   
+        while (d) {
+        if(s*S>B)break;
+        if  ((B-S*s)%d) {
+        --d; s+=K;
+        //cout<<d<<' '<<s<<endl;
+        } else {
+            //cout<<d<<' '<<s<<endl;
+            df=(B-S*s)/d;
+            if ((df*d+S*s==B)&&(d*K+s==A)&&(df>=0)&&(s>0)) break; else  {--d; s+=K; df=-1;}
+            //cout<<d<<' '<<s<<endl;
+        }
+          
+        }
+
+     cout<<df;
+   
+   }

@@ -1,0 +1,19 @@
+#include <iostream>
+using namespace std;
+long long R[1000001]={1};
+int main()
+{
+    int N,K,i,M=1000000007;
+    cin>>N>>K;
+    for(i=1;i<K;++i)
+        R[i]=R[i-1]<<1,R[i]%=M;
+    for(i=0;i<K;++i)
+        R[K]+=R[i],R[K]%=M;
+    for(i=K+1;i<=N;++i)
+    {
+        R[i]=2*R[i-1]-R[i-K-1];
+        if(R[i]<0)R[i]+=M;
+        else R[i]%=M;
+    }
+    cout<<R[N];
+}

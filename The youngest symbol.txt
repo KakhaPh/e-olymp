@@ -1,0 +1,12 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+    string S;
+    cin>>S;
+    int i,R,j;
+    for(i=0,R=j=1;j<S.size();++j)
+        if(S[j]<S[i])i=j,R=1;
+        else R+=S[j]==S[i];
+    cout<<S[i]<<' '<<R;
+}

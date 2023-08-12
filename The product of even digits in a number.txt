@@ -1,0 +1,18 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+    long long N,P=1;
+    short C;
+    cin>>N;
+    if(N<0)N=-N;
+    do
+    {
+        C=N%10;
+        N/=10;
+        if(!(C&1))P*=C;
+    }
+    while(N);
+    if(P==1)P=-1;
+    cout<<P;
+}

@@ -1,0 +1,14 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+    string S;
+    char C;
+    int N,P=0,i,D='A'-'a';
+    getline(cin,S);
+    cin>>C;
+    N=S.size();
+    for(i=0;i<N;++i)
+        if(S[i]==C || S[i]-C==D)++P;
+    cout<<P;
+}

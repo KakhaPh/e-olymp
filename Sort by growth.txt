@@ -1,0 +1,16 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int N,A,B,i,P,M;
+    while(cin>>N)
+    {
+        map<int,int>C;
+        for(i=0;i<N;++i)
+            cin>>M,++C[M];
+        cin>>A>>B;
+        for(i=A,P=0;i<=B;++i)
+            P+=C[i];
+        cout<<P<<endl;
+    }
+}

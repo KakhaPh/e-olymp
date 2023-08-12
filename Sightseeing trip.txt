@@ -1,0 +1,9 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+    unsigned short  n,m,k; short P;
+    cin>>n>>m>>k;
+    P=n/k+(n%k>0)+m/k+(m%k>0);
+    cout<<P;
+}

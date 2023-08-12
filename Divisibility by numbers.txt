@@ -1,0 +1,9 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+    int N,M,K;
+    cin>>N>>M>>K;
+    if(N%M==0 && N%K==0) cout<<"YES";
+    else cout<<"NO";
+}

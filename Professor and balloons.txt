@@ -1,0 +1,11 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+    long long N,A,B,b,r,y;
+    cin>>N>>A>>B;
+    r=N-A;
+    y=N-B;
+    b=N-r-y;
+    cout<<b<<' '<<r<<' '<<y;
+}

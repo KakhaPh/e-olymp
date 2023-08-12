@@ -1,0 +1,11 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    short N,i,j;
+    cin>>N;
+    for(i=0;i<N;++i,cout<<endl)
+        for(j=0;j<N;++j)
+            if(i+j&1)cout<<' ';
+            else cout<<'*';
+}

@@ -1,0 +1,9 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    long long N;
+    cin>>N;
+    if(N%6==0 && (12<=N && N<=96 || -96<=N && N<=-12))cout<<"YES";
+    else cout<<"NO";
+}

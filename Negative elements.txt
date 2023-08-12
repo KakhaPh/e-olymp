@@ -1,0 +1,14 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{          
+    short N,R=0;
+    double M,J=0;
+    cin>>N;
+    while(N--)
+    {
+        cin>>M;
+        if(M<0)J+=M,++R;
+    }
+    cout<<R<<' '<<fixed<<setprecision(2)<<J;
+}

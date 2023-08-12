@@ -1,0 +1,11 @@
+#include <iostream>
+using namespace std;
+int P[100001]={0,2,4,7};
+int main()
+{
+    int N,i,D=12345;
+    cin>>N;
+    for(i=4;i<=N;P[i++]%=D)
+        P[i]=P[i-1]+P[i-2]+P[i-3];
+    cout<<P[N];
+}

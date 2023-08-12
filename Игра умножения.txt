@@ -1,0 +1,15 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main(){
+    long long N=9,M;
+    string ans[]={"Stan","Ollie"};
+    short V=0;
+    cin>>M;
+    while(M>N)
+    {
+        if(V==0)N<<=1;
+        else N*=9;
+        V=!V;
+    }
+    cout<<ans[V]<<" wins.";
+}

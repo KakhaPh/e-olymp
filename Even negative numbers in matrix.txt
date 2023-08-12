@@ -1,0 +1,16 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+	short N,i,j,M,R=0;
+    int J=0;
+    cin>>N;
+    for(i=0;i<N;++i)
+        for(j=0;j<N;++j)
+            {
+                cin>>M;
+                if(M&1)continue;
+                if(M<0)++R,J+=M;
+            }
+    cout<<R<<' '<<J;
+}

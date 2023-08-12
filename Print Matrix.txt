@@ -1,0 +1,15 @@
+#include <iostream>
+using namespace std;
+short A[100][100];
+int main()
+{
+    short N,i,j,K,L;
+    cin>>N;
+    for(i=0;i<N;++i)
+        for(j=0;j<N;++j)
+            cin>>A[i][j];
+    cin>>K>>L;
+    for(i=0;i<K;++i,cout<<endl)
+        for(j=0;j<L;++j)
+            cout<<A[i][j]<<' ';
+}

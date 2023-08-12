@@ -1,0 +1,18 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+    long long N,NN,P=1,K,i;
+    cin>>N;
+    NN=N;
+    for(i=2;i*i<=N;++i)
+        if(N%i==0)
+            {
+                K=0;
+                do N/=i,++K;
+                while(N%i==0);
+                P*=(K+1);
+            }
+    if(N>1)P<<=1;
+    cout<<NN-P;
+}

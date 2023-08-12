@@ -1,0 +1,17 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int A,B,C,D,X1,X2;
+    cin>>A>>B>>C;
+    D=B*B-4*A*C;
+    A<<=1;
+    if(D<0)cout<<"No roots";
+    else if(D==0)cout<<"One root: "<<-B/A;
+        else {
+        D=sqrt(D);
+        if(A>0)X1=(-B-D)/A,X2=(-B+D)/A;
+        else X1=(-B+D)/A,X2=(-B-D)/A;
+        cout<<"Two roots: "<<X1<<' '<<X2;
+    }
+}

@@ -1,0 +1,51 @@
+#include <bits/stdc++.h>
+using namespace std;
+string F(string K)
+{
+    unsigned long long N;
+    stringstream SS(K);
+    SS>>N;
+    string ans="",D="01";
+    while(N)
+    {
+        ans=D[N&1]+ans;
+        N>>=1;
+    }
+    return ans;
+}
+string G(int N,string K)
+{
+    int n=K.size(),i,L;
+    string ans="",D="01";
+    if(n<20)ans=F(K); else
+    while(K!="0")
+    {
+        ans=D[K[n-1]&1]+ans;
+        for(L=i=0;i<n;++i)
+        {
+            int d=K[i]-'0'+L*10;
+            K[i]='0'+(d>>1);
+            L=d&1;
+        }
+        if(K[0]=='0' && n>1)K=K.substr(1),--n;
+    }
+    if(N>ans.size())ans=string(N-ans.size(),'0')+ans;
+    return ans;
+}
+int main()
+{
+    int N,i,n=0;
+    string K,P;
+    cin>>N>>K;
+    while(N)
+    {
+        P=G(N,K);
+        for(i=P.size()-1;i>0;--i)
+            P[i]='0'+(P[i]!=P[i-1]);
+        cout<<"Case "<<++n<<":"<<endl;
+        cout<<"  N = "<<N<<endl;
+        cout<<"  k = "<<K<<endl;
+        cout<<"  g = "<<P<<endl<<endl;
+        cin>>N>>K;
+    }
+}

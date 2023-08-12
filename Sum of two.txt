@@ -1,0 +1,12 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int N,K,M;
+    cin>>N;
+    while(N--)
+    {
+        cin>>K>>M;
+        cout<<K+M<<endl;
+    }
+}

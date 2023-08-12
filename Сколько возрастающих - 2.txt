@@ -1,0 +1,39 @@
+#include <iostream>
+using namespace std;
+unsigned NN=250001;
+long long B[250001],M=1000000009;
+long long SUM(int N)
+{
+	long long P=0;
+    if(N<0)return 0;
+	while(N)
+	{
+		P+=B[N];
+		N&=N-1;
+	}
+	return P%M;
+}
+void ADD(unsigned K,long long D)
+{
+    while(K<=NN)
+    {
+        B[K]+=D;
+        B[K]%=M;
+        K+=K&-K;
+    }
+}
+int main()
+{
+    int N,P=0,K,D;
+    cin>>N;
+    while(N--)
+    {
+        cin>>K;
+        K+=125000;
+        D=SUM(K-1)+1;
+        P+=D;
+        P%=M;
+        ADD(K,D);
+    }
+    cout<<P;
+}

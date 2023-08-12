@@ -1,0 +1,19 @@
+#include <iostream>
+using namespace std;
+int H[100000],P[100000];
+int main()
+{
+    int N,i,j,K=0;
+    cin>>N>>H[0];
+    P[0]=-1;
+    for(cout<<P[0],i=1;i<N;++i)
+    {
+        cin>>H[i];
+        for(j=i-1;j>=K;--j)
+            if(H[i]<=H[j])break;
+        if(j==K-1)P[i]=-1,K=i;
+        else if(H[i]<H[j])P[i]=j;
+             else P[i]=P[j];
+        cout<<' '<<P[i];
+    }
+}

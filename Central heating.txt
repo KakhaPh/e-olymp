@@ -1,0 +1,10 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+    int  h,w,l,k; long long V,P;
+    cin>>h>>w>>l>>k;
+    V=1LL*h*w*l;
+    P=V/k+(V%k>0);
+    cout<<P;
+}

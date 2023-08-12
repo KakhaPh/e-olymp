@@ -1,0 +1,33 @@
+#include <iostream>
+using namespace std;
+string RV(string S)
+{
+    int L,R=S.size()-1;
+    for(;L<R;++L,--R)
+        swap(S[L],S[R]);
+    return S;
+}
+string AG(string S)
+{
+    int i;
+    for(i=1;i<S.size();++i)
+        S[i]=(S[i]!=S[i-1])+'0';
+    return S;
+}
+long long StoL(string S)
+{
+    int i; long long P;
+    for(i=P=0;i<S.size();++i)
+    {
+        P<<=1;
+        P|=S[i]-'0';
+    }
+    return P;
+}
+int main()
+{
+    short N;
+    string A,B;
+    cin>>N>>A>>B;
+    cout<<abs(StoL(AG(RV(A)))-StoL(AG(RV(B))));
+}

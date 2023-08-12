@@ -1,0 +1,12 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+    int N,P=0;
+    cin>>N;
+    if(N<0)N=-N;
+    while(N)
+        P+=N%10,
+        N/=10;
+    cout<<P;
+}

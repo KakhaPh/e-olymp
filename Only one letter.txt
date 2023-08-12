@@ -1,0 +1,14 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+    string S;
+    int i,Ra=0;
+    while(cin>>S)
+    {
+        for(i=0;i<S.size();++i)
+            Ra+=S[i]=='a';
+    }
+    if(Ra)cout<<string(Ra,'a');
+    else cout<<-1;
+}

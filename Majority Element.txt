@@ -1,0 +1,11 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main() {
+    int N,i,M;
+    cin>>N;
+    map<int,int>A;
+    for(i=0;!i || A[M]<=N-A[M] && i<N;++i,++A[M])
+        cin>>M;
+    if(A[M]>N-A[M])cout<<M;
+    else cout<<-1;
+}

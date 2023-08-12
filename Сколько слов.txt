@@ -1,0 +1,17 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    string A,B;
+    cin>>A>>B;
+    map<char,int>C;
+    C['A']=C['D']=0;C['B']=C['E']=1;C['C']=2;
+    if(A==B){cout<<0;return 0;}
+    if(A>B)swap(A,B);
+    int i,N=A.size(),p=3;
+    long long P=0;
+    for(i=0;i<N;++i,p=5-p)
+        P*=p,P+=C[B[i]]-C[A[i]];
+    --P;
+    cout<<P;
+}

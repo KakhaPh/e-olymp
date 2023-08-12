@@ -1,0 +1,9 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+    short N;
+    cin>>N;
+    if(N%4 || !(N%100) && N%400)cout<<"NO";
+    else cout<<"YES";
+}

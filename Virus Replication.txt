@@ -1,0 +1,17 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+    string S,W;
+    cin>>S>>W;
+    int i,j,N=S.size(),M=W.size();
+    if(S==W){cout<<0;return 0;}
+    for(i=0;i<N && i<M;++i)
+        if(S[i]!=W[i])break;
+    for(j=0;j<N && j<M;++j)
+        if(S[N-1-j]!=W[M-1-j])break;
+    if(i+j>=M)
+        if(M<=N){cout<<0;return 0;}
+        else {cout<<M-N;return 0;}
+    cout<<M-i-j;
+}

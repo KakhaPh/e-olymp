@@ -1,0 +1,15 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+    int N,K,M,m;
+    cin>>N>>M;
+    m=M;
+    while(--N)
+    {
+        cin>>K;
+        if(K<m)m=K;
+        else if(K>M)M=K;
+    }
+    cout<<M-m;
+}

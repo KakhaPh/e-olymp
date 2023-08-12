@@ -1,0 +1,22 @@
+#include <iostream>
+using namespace std;
+int D[123],R[123];
+int main()
+{
+    int T,P,N,i,k;
+    string S;
+    cin>>T;
+    while(T--)
+    {
+        cin>>N>>S;
+        for(i=0;i<N;++i)
+            ++D[S[i]],R[S[i]]=i;
+        for(P=0,k=0,i=48;i<123;++i)
+        {
+            if(D[i]==0)continue;
+            P+=D[i]*(R[i]-(D[i]+k-1))*5;
+            k+=D[i]; D[i]=R[i]=0;
+        }
+        cout<<P<<endl;
+    }
+}

@@ -1,0 +1,14 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+    int W,M;
+    short N;
+    cin>>N;
+    if(N<4){cout<<N+!N;return 0;}
+    N-=3;
+    W=2;M=3;
+    while(N--)
+        M+=W,W=M-W;
+    cout<<M<<endl;
+}

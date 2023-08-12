@@ -1,0 +1,36 @@
+#include <bits/stdc++.h>
+using namespace std;
+int A[100000],B[100000],D[60001];
+int main()
+{
+    int N,M,i,j,K=0,L,R,k;
+    cin>>N;
+    for(i=0;i<N;++i)
+        cin>>A[i];
+    for(B[0]=1,D[1]=A[0],i=M=1;i<N;++i)
+    {
+        if(A[i]>=D[M]){if(A[i]>D[M])D[++M]=A[i];B[i]=M,K=i;continue;}
+        if(A[i]<=D[1]){D[1]=A[i],B[i]=1;continue;}
+        L=1;R=M;k=(R+L)>>1;
+        while(R-L>1)
+        {
+            k=(R+L)>>1;
+            if(D[k]==A[i])break;
+            if(A[i]>D[k])L=k;
+            else R=k;
+        }
+        if(D[k]==A[i])B[i]=k;
+        else D[R]=A[i],B[i]=R;
+    }
+    vector<int>V(M);
+    V[M-1]=K;
+    for(L=M-1,i=M-2;i>=0;--i,--L)
+    {
+        for(j=K-1;B[j]!=L;--j);
+        V[i]=j;
+        K=j;
+    } 
+    cout<<M<<endl;
+    for(i=0;i<M;++i)
+        cout<<A[V[i]]<<' ';
+}

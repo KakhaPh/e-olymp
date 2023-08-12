@@ -1,0 +1,22 @@
+#include <bits/stdc++.h>
+using namespace std;
+short A[10];
+int main()
+{
+    short N,M,i,j,k,J,K;
+    cin>>N>>M;
+    while(M--)
+    {
+        for(i=0;i<N;++i)
+            cin>>A[i];
+        sort(A,A+N);
+        for(i=1;;++i)
+            if(A[i]>A[i-1])break;
+        for(j=N-2;;--j)
+            if(A[j]<A[j+1])break;
+        for(J=0,k=i;k<=j;++k)
+            J+=A[k];
+        K=j-i+1;
+        cout<<fixed<<setprecision(2)<<1.*J/K<<' ';
+    }
+}

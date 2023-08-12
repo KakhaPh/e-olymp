@@ -1,0 +1,17 @@
+#include <bits/stdc++.h>
+using namespace std;
+long long C(int M,int N)
+{
+    if(2*M>N)M=N-M;
+    long long P;
+    int i;
+    for(P=i=1;i<=M;++i)
+        P*=N-i+1,P/=i;
+    return P;
+}
+int main()
+{
+    int N,M;
+    cin>>N>>M;
+    cout<<C(M,N);
+}

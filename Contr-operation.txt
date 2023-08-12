@@ -1,0 +1,15 @@
+#include <bits/stdc++.h>
+using namespace std;
+long long A[100];
+int main()
+{
+    short N,i,j,K;
+    cin>>N;
+    for(i=0;i<N;++i)
+        cin>>A[i];
+    for(i=K=0,j=1;j<N;++j)
+        if(A[j]>A[i])i=j;
+        else if(A[j]<A[K])K=j;
+    for(i=A[i],j=0;j<N;cout<<A[j]<<' ',++j)
+        if(A[j]==i)A[j]=A[K];
+}

@@ -1,0 +1,16 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main(){
+    short J,i,j,k,R=0;
+    cin>>J;
+    for(i=1;i<=9;++i)
+        for(j=0;j<=9;++j)
+            for(k=0;k<=9;++k)
+                if(i+j+k==J)++R;
+    cout<<R<<endl;
+    if(R)
+    for(i=1;i<=9;++i)
+        for(j=0;j<=9;++j)
+            for(k=0;k<=9;++k)
+                if(i+j+k==J)cout<<i<<j<<k<<endl;
+}

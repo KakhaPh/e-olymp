@@ -1,0 +1,11 @@
+#include <bits/stdc++.h>
+using namespace std;
+int P,Q;
+int main()
+{
+    int i,N,R;
+    cin>>N>>P;
+    for(i=2;i<=N;++i)
+        cin>>R,Q=max(P,Q+R),swap(P,Q);
+    cout<<P;
+}

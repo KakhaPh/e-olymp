@@ -1,0 +1,32 @@
+#include <bits/stdc++.h>
+using namespace std;
+string V[102];
+void sh(int i,int j)
+{
+    if(V[i][j]!='#')return;
+    V[i][j]='D';
+    sh(i+1,j);
+    sh(i-1,j);
+    sh(i,j+1);
+    sh(i,j-1);
+}
+int main()
+{
+    int N,M,i,j,P=0;
+    cin>>N>>M;
+    string S;
+    for(i=1;i<=N;++i)
+    {
+        cin>>S;
+        V[i]='.'+S+'.';
+    }
+    V[0]=V[N+1]=string(M+2,'.');
+    for(i=1;i<=N;++i)
+        for(j=1;j<=M;++j)
+            if(V[i][j]=='#')
+                {
+                    ++P;
+                    sh(i,j);
+                }
+    cout<<P;
+}

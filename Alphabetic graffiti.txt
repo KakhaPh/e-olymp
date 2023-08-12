@@ -1,0 +1,11 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+    int N,i;
+    cin>>N;
+    string A,C; char c='a';
+    A=C="a";
+    for(i=N-1;i>=0;--i,C+=++c)
+        cout<<A<<string(i,' ')<<C<<endl;        
+}

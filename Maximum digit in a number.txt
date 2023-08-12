@@ -1,0 +1,15 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+    long long N;
+    cin>>N;
+    short P=0,M;
+    while(N)
+    {
+        M=N%10;
+        N/=10;
+        if(M>P)P=M;
+    }
+    cout<<P;
+}

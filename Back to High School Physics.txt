@@ -1,0 +1,8 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+    int V,T;
+    while(cin>>V>>T)
+        cout<<V*2*T<<endl;
+}

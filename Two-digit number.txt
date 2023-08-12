@@ -1,0 +1,9 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+    long long N;
+    cin>>N;
+    if(-99<=N && N<=-10 || 10<=N && N<=99)cout<<"Ok";
+    else cout<<"No";
+}

@@ -1,0 +1,15 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    long long A,P=1;
+    int N;
+    cin>>A>>N;
+    if(A==1)P=A;
+    else
+    {
+        while(N--)
+            P*=A;
+    }
+    cout<<P;
+}

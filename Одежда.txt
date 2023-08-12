@@ -1,0 +1,19 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+    short T;
+    cin>>T;
+    while(T--)
+    {
+        short C[101]={0},N,i,j,K;
+        cin>>N;
+        for(i=0;i<N;++i)
+            cin>>j,++C[j];
+        for(K=i=0,j=1;j<101;++j)
+            if(C[j]>C[i])i=j,K=0;
+            else if(C[j]==C[i])K=1;
+        if(K)cout<<0<<endl;
+        else cout<<i<<endl;
+    }
+}

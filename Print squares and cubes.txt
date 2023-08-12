@@ -1,0 +1,13 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+    long long i;
+    int A,B;
+    cin>>A>>B;
+    for(i=A;i<=B;++i)
+        cout<<i*i<<' ';
+    cout<<endl;
+    for(i=B;i>=A;--i)
+        cout<<i*i*i<<' ';
+}

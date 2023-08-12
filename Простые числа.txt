@@ -1,0 +1,15 @@
+#include <iostream>
+int A[100];
+using namespace std;
+int main()
+{int i,j,N;
+ cin>>N;
+ for(i=0;i<N;++i)
+     cin>>A[i];
+ for(i=0;i<N;++i)
+ {
+     for(j=0;j<N;++j)
+         if(j!=i && A[i]%A[j]==0)break;
+     if(j==N)cout<<A[i]<<' ';
+ }
+}

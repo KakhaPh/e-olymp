@@ -1,0 +1,15 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    short N,i,j;
+    cin>>N;
+    vector<short>A(N);
+    for(i=0;i<N;++i)
+        cin>>A[i];
+    for(i=N-1,j=N-2;j>=0;--j)
+        if(A[j]>A[i])i=j;
+    swap(A[i],A[N-1]);
+    for(i=0;i<N;++i)
+        cout<<A[i]<<' ';
+}

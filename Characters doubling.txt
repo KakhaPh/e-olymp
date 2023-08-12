@@ -1,0 +1,11 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+    string S,P="";
+    getline(cin,S);
+    int i,N=S.size();
+    for(i=0;i<N;P+=S[i++])
+        if('a'<=S[i] && S[i]<='z')P+=S[i];        
+    cout << P;
+}

@@ -1,0 +1,9 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    double X;
+    cin>>X;
+    X*=X;
+    cout<<fixed<<setprecision(3)<<sqrt(X*X+1)/X-sqrt(X/(X+1));
+}

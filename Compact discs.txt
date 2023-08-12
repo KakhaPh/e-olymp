@@ -1,0 +1,17 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+    short N,P;
+    cin>>N;
+    P=N/100*100;
+    N%=100;
+    if(N>=65)P+=100;
+    else
+    {
+        P+=N/20*30;N%=20;
+        if(N>=15)P+=30;
+        else P+=N*2;
+    }
+    cout<<P;
+}

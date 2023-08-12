@@ -1,0 +1,18 @@
+#include <iostream>
+using namespace std;
+int IsPrime(long long N)
+{
+    if(N<4)return N!=1;
+    if(!(N&1) || !(N%3))return 0;
+    long long i; int d=2;
+    for(i=5;i*i<=N;i+=d,d=6-d)
+        if(N%i==0)return 0;
+    return 1;
+}
+int main()
+{
+    long long N;
+    cin>>N;
+    if(IsPrime(N))cout<<"Yes";
+    else cout<<"No";
+}

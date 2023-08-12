@@ -1,0 +1,11 @@
+#include bitsstdc++.h
+using namespace std;
+int main()
+{
+    int X,Y,R,P;
+    cinR;
+    P=4R+1;
+    for(Y=R-1;Y0;--Y)
+        X=sqrt(RR-YY),P+=4X;
+    coutP;
+}

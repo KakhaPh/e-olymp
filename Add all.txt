@@ -1,0 +1,24 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    multiset<long long>D;
+    int i,N,M;
+    long long P=0,A;
+    cin>>N;
+    for(i=0;i<N;++i)
+        cin>>M,D.insert(M);
+    multiset<long long>::iterator X;
+    while(--N>1)
+    {
+        X=D.begin();
+        A=*X;
+        ++X;
+        A+=*X; P+=A; 
+        D.erase(D.begin(),++X);
+        D.insert(A);
+    }
+    X=D.begin();
+    P+=(*X++)+*X;
+    cout<<P;
+}

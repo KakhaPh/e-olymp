@@ -1,0 +1,15 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+    unsigned long long N;
+    cin>>N;
+    N^=N>>1;
+    int P=1;
+    while(N)
+    {
+        N&=N<<1;
+        ++P;
+    }
+    cout<<P;
+}

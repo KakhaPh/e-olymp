@@ -1,0 +1,9 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+    string N;
+    cin>>N;
+    int K=N[0]=='-',L=N.size()-1;
+    cout<<N[K]+N[L]-('0'<<1);
+}

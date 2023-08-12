@@ -1,0 +1,18 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+    int N,JK=0,JL=0;
+    short C,R=0;
+    cin>>N;
+    do
+    {
+        C=N%10;
+        N/=10;
+        if(R)JK+=C;
+        else JL+=C;
+        R=!R;
+    }
+    while(N);
+    cout<<JK*JL;
+}

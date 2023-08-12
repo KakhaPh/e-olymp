@@ -1,0 +1,10 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    short A,B;
+    cin>>A>>B;
+    cout<<A;
+    for(short i=A+1;i<=B;++i)
+        cout<<' '<<i;
+}

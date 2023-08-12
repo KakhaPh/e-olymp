@@ -1,0 +1,11 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+    int X;
+    long long Y;
+    cin>>X;
+    if(X>=10)Y=1LL*X*(X*X+5);
+    else Y=X*(X-2)+4;
+    cout<<Y;
+}

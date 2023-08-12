@@ -1,0 +1,8 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    double W,X,Y,Z;
+    cin>>W>>X>>Y>>Z;
+    cout<<fixed<<setprecision(4)<<W+X<<endl<<W+X+Y<<endl<<W+X+Y+Z;
+}

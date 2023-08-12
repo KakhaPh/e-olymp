@@ -1,0 +1,14 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+    string N,P="";
+    cin>>N;
+    int i,n=N.size();
+    for(i=0;i<n;++i)
+        if(N[i]=='3' || N[i]=='9');
+        else P+=N[i];
+    for(i=0;i<P.size()-1;++i)
+        if(P[i]!='0')break;
+    cout<<P.substr(i);
+}

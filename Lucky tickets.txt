@@ -1,0 +1,13 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+    short N,i,j,k;
+    short P;
+    cin>>N;
+    for(P=i=0;i<10;++i)
+        for(j=0;j<10;++j)
+            for(k=0;k<10;++k)
+                P+=i+j+k==N;
+    cout<<P*P;
+}

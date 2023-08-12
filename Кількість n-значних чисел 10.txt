@@ -1,0 +1,16 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int N,i;
+    long long M,B;
+    cin>>N>>M;
+    for(B=i=0;i<N;++i)
+        B*=10,B+=9;
+    ++M;
+    M+=M&1;
+    B-=B&1;
+    if(M>B)B=0;
+    else B-=M,B>>=1,++B;
+    cout<<B;   
+}

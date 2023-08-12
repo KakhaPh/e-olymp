@@ -1,0 +1,16 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+    int N,D=9,J=1,P=0,G=0;
+    cin>>N;
+    while(N>P+D*J)
+    {
+        P+=D*J;
+        G+=D;
+        D*=10;
+        ++J;
+    }
+    if((N-P)%J)cout<<0;
+    else cout<<G+(N-P)/J;    
+}

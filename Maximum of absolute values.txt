@@ -1,0 +1,16 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    double P,M;
+    short N;
+    cin>>N>>P;
+    if(P<0)P=-P;// P=abs(P);
+    while(--N)
+    {
+        cin>>M;
+        if(M<0)M=-M;
+        if(M>P)P=M;
+    }
+    cout<<fixed<<setprecision(2)<<P;
+}

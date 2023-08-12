@@ -1,0 +1,12 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+    long long N,M,m; int R[]={0,0};
+    cin>>N;
+    for(;N;N>>=1)
+        ++R[N&1];
+    m=(1LL<<R[1])-1;
+    M=m<<R[0];
+    cout<<M-m;
+}

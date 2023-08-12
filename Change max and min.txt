@@ -1,0 +1,18 @@
+#include <bits/stdc++.h>
+using namespace std;
+int A[100];
+int main()
+{
+    int N,i,j,L;
+    cin>>N>>A[0];
+    for(i=j=0,L=1;L<N;++L)
+    {
+        cin>>A[L];
+        if(A[L]>A[i])i=L;
+        else if(A[L]<A[j])j=L;
+    }
+    for(L=0;L<N;++L)
+        if(A[L]==A[i])cout<<A[j]<<' ';
+        else if(A[L]==A[j])cout<<A[i]<<' ';
+             else cout<<A[L]<<' ';
+}

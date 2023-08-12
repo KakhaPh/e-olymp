@@ -1,0 +1,18 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+    int N,K,KN=1;
+    long long R,RN=4,P;
+    cin>>N;
+    for(K=0,R=0;K+KN<=N;KN+=2,RN+=4)
+        K+=KN,R+=RN;
+    if(K==N)cout<<R;
+    else
+    {
+        --KN;
+        if(N-K<=KN/2)R+=3+(N-K-1)*2;
+        else R+=6+(N-K-2)*2;
+        cout<<R;
+    }
+}

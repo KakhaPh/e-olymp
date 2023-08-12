@@ -1,0 +1,17 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    string S;long long N;
+    stack<long long>St;
+    while(cin>>S)
+    {
+        string D=S.substr(0,2);
+        if(D=="pu"){cin>>N;St.push(N);cout<<"ok"<<endl;}
+        else if(D=="si")cout<<St.size()<<endl;
+        else if(D=="ex"){cout<<"bye";break;}
+        else if(D=="cl"){while(!St.empty())St.pop();cout<<"ok"<<endl;}
+        else if(St.empty())cout<<"error"<<endl;
+            else {cout<<St.top()<<endl;if(D=="po")St.pop();}
+    }
+}

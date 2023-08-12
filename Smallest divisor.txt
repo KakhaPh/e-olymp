@@ -1,0 +1,13 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+    int N;
+    long long i;
+    cin>>N;
+    i=2;
+    while(i*i<=N)
+        if(N%i==0){cout<<i;break;}
+        else ++i;
+    if(i*i>N)cout<<N;
+}

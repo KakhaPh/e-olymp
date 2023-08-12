@@ -1,0 +1,45 @@
+#include <bits/stdc++.h>
+using namespace std;
+int D[1000001];
+int MZ(int N)
+{
+    int P=0;
+    do{P=P*10+9;N/=10;}while(N);
+    return P;
+}
+string ItoS(int N)
+{
+    stringstream SS;
+    SS<<N;
+    return SS.str();
+}
+int StoI(string S)
+{
+    int N;
+    stringstream SS(S);
+    SS>>N;
+    return N;
+}
+int RN(int N)
+{
+    string S=ItoS(N);
+    int L=0,R=S.size()-1;
+    for(;L<R;++L,--R)
+        swap(S[L],S[R]);
+    return StoI(S);
+}
+int main()
+{
+    int A,B,i,j,M,P=0,K;
+    D[1]=1;
+    cin>>A>>B;
+    M=MZ(B);
+    //cout<<M<<endl;
+    for(i=3;i*i<=M;i+=2)
+        if(!D[i])for(j=i*i;j<=M;j+=2*i)D[j]=1;
+    if(A==1){P+=B>1;A=3;} else
+    if(!(A&1)){P+=A==2;++A;}
+    for(i=A;i<=B;i+=2)
+        P+=!D[i] && ((K=RN(i))&1) && !D[K];
+    cout<<P;
+}

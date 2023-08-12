@@ -1,0 +1,17 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    string S;long long N;int K=0;
+    map<int,stack<long long> >MSt;
+    map<long long,int>DM;
+    while(cin>>S)
+    {
+        string D=S.substr(0,2);
+        if(D=="pu"){cin>>N;++DM[N];MSt[DM[N]].push(N);K=max(K,DM[N]);}
+        else {
+            N=MSt[K].top();MSt[K].pop();if(MSt[K].empty())--K;
+            --DM[N]; cout<<N<<endl;
+        }
+    }
+}

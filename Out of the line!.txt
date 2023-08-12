@@ -1,0 +1,19 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    long long N,Pr,Nx;
+    cin>>N;
+    if(N<3)cout<<N;
+    else
+    {
+        Pr=2;Nx=3;
+        N-=2;
+        while(N--)
+        {
+            Nx+=Pr;
+            Pr=Nx-Pr;
+        }
+        cout<<Nx-1;
+    }
+}

@@ -1,0 +1,15 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+    int P,K;
+    char C;
+    cin>>C;
+    P=C-'0';
+    while(cin>>C)
+        if(C=='+')K=1;
+        else if(C=='*')K=0;
+             else if(K)P+=C-'0';
+                  else P*=C-'0';
+    cout<<P;
+}

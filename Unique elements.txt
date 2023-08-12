@@ -1,0 +1,16 @@
+#include <bits/stdc++.h>
+using namespace std;
+int A[100];
+int main()
+{
+    int N,i;
+    cin>>N;
+    for(i=0;i<N;++i)
+        cin>>A[i];
+    set<int>D,G;
+    for(i=0;i<N;++i)
+        if(D.count(A[i]))G.insert(A[i]);
+        else D.insert(A[i]);
+    for(i=0;i<N;++i)
+        if(G.count(A[i])==0)cout<<A[i]<<' ';
+}

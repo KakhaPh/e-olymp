@@ -1,0 +1,10 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+    int N;
+    short P;
+    cin>>N;
+    for(P=0;N;N&=N-1)++P;
+    cout<<P;
+}

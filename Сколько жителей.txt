@@ -1,0 +1,13 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int M,i;
+    long long P=0;
+    map<int,int>D;
+    while(cin>>M)
+        ++D[M];
+    for(i=0;i<1001;++i)
+        if(D[i])M=i+1,P+=(D[i]/M+(D[i]%M>0))*M;
+    cout<<P;
+}

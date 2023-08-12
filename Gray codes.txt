@@ -1,0 +1,12 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int T,N,K;
+    cin>>T;
+    while(T--)
+    {
+        cin>>N>>K;
+        cout<<(K^(K>>1))<<endl;
+    }
+}

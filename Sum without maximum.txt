@@ -1,0 +1,15 @@
+#include <bits/stdc++.h>
+using namespace std;
+int A[100];
+int main()
+{
+    int N,i,j,J,K;
+    cin>>N;
+    for(i=0;i<N;++i)
+        cin>>A[i];
+    for(J=A[0],i=0,j=K=1;j<N;J+=A[j++])
+        if(A[j]>A[i])i=j,K=1;
+        else K+=A[j]==A[i];
+    J-=A[i]*K;
+    cout<<J;       
+}

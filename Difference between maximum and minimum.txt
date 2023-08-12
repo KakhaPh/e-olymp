@@ -1,0 +1,15 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    short N,Mx,Mn,M;
+    cin>>N>>Mx;
+    Mn=Mx;
+    while(--N)
+    {
+        cin>>M;
+        if(M>Mx)Mx=M;
+        else if(M<Mn)Mn=M;
+    }
+    cout<<Mx-Mn;
+}

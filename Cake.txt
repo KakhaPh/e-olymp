@@ -1,0 +1,9 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+    int R,W,L;
+    cin >>R>>W>>L;
+    if(4*R*R<W*W+L*L)cout<<"NO";
+    else cout<<"YES";
+}

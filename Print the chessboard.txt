@@ -1,0 +1,15 @@
+#include <iostream>
+using namespace std;
+short A[10][10];
+int main()
+{
+    short N,i,j,D[2]={1};
+    cin>>N;
+    D[1]=(N*N+1>>1)+1;
+    for(i=0;i<N;++i)
+        for(j=0;j<N;++j)
+            A[i][j]=D[i+j&1]++;
+    for(i=0;i<N;++i,cout<<endl)
+        for(j=0;j<N;++j)
+            cout<<A[i][j]<<' ';
+}

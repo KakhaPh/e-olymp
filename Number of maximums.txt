@@ -1,0 +1,14 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int N,M,Mx,K;
+    cin>>N>>Mx; K=1;
+    while(--N)
+    {
+        cin>>M;
+        if(M>Mx)Mx=M,K=1;
+        else K+=Mx==M;
+    }
+    cout<<K;       
+}

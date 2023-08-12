@@ -1,0 +1,49 @@
+#include <iostream>
+using namespace std;
+int M=1000000007;
+int sheb(int K)
+{
+    int N=M-2;
+    long long A=K,P=1;
+    while(N>1)
+    {
+        if(N&1)P*=A,P%=M;
+        A*=A;
+        A%=M;
+        N>>=1;
+    }
+    P*=A;
+    return P%M;
+}
+int C(int N)
+{
+    long long P,Q; int i,j;
+    for(P=Q=1,i=2*N,j=N+1;j>1;--j,--i,P%=M,Q%=M)
+        P*=i,Q*=j;
+    if(P%Q==0)return P/Q;
+    Q=sheb(Q);
+    P*=Q;
+    return P%M;
+}
+int main()
+{
+    int T,FR,K,N,i;
+    long long P,Q;
+    cin>>T;
+    while(T--)
+    {
+        cin>>FR>>N;
+        P=Q=1;
+        while(--FR)
+        {
+            cin>>K;
+            N+=K;
+            for(i=K-1;i>=0;--i,P%=M,Q%=M)
+                P*=N-i,Q*=K-i;            
+        }
+        if(P%Q==0)P/=Q;
+        else P*=sheb(Q),P%=M;
+        P*=C(N); P%=M;
+        cout<<P<<endl;
+    }
+}

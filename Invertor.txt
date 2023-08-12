@@ -1,0 +1,12 @@
+#include <bits/stdc++.h>
+using namespace std;
+long long A[99];
+int main()
+{
+	short N,i;
+    cin>>N;
+    for(i=0;i<N;++i)
+        cin>>A[i];
+    for(i=N-1;i>=0;--i)
+        cout<<A[i]<<' ';
+}

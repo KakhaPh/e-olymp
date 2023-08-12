@@ -1,0 +1,12 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+    int N,i,PD,DP,P,rp=0;
+    string S;
+    cin>>S>>PD>>DP;
+    for(N=S.size(),i=0;i<N;++i)
+        rp+='a'<=S[i] && S[i]<='z';
+    P=min(rp*PD,(N-rp)*DP);
+    cout<<P;
+}

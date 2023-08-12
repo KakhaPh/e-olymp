@@ -1,0 +1,15 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int M,N; char c;
+    cin>>M>>N;
+    string S="";
+    while(N--)
+    {
+        c='0'+(M&1);
+        S=c+S;
+        M>>=1;
+    }
+    cout<<S;
+}

@@ -1,0 +1,29 @@
+#include <bits/stdc++.h>
+using namespace std;
+int A[40],M;
+int NV()
+{
+    int i,j,K;
+    for(j=M-1;j>=0;--j)
+        if(A[j]!=1)break;
+    if(j==-1)return 0;
+    --A[j];
+    K=M-j;
+    //cout<<K<<' '<<j<<' '<<A[j]<<endl;
+    for(i=j+1;K;K-=A[i],++i)//cout<<i<<' '<<K<<endl
+       A[i]=min(A[i-1],K);
+    //for(j=0;j<i;++j)cout<<A[j]<<' '; cout<<endl;
+    return M=i;
+}
+int main()
+{
+    int N,i;
+    cin>>N;
+    A[0]=N;M=1;
+    while(NV())
+    {
+        for(cout<<A[M-1],i=M-2;i>=0;--i)
+            cout<<"+"<<A[i];
+        cout<<endl;
+    }
+}

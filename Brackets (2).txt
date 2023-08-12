@@ -1,0 +1,38 @@
+#include <iostream>
+using namespace std;
+char St[7];
+int Nxt(string &S)
+{
+    int N=S.size(),i,G,D;
+    for(G=D=0,i=N-1;i>=0;--i)
+        if(S[i]==')')++D;
+        else {++G;if(D>G)break;}
+    if(i<0)return 0;
+    S[i]=')';
+    S=S.substr(0,i+1)+string(G,'(')+string(D-1,')');
+    return 1;
+}
+int main()
+{
+    short N,M,K,i,j,t,n;
+    char C;
+    cin>>N;
+    if(N&1)return 0;
+    M=N;
+    N>>=1;
+    K=1<<N;
+    string S=string(N,'(')+string(N,')');
+    do
+    {
+        cout<<S<<endl;
+        for(n=0,i=1;i<K;++i,cout<<endl)
+            for(t=K>>1,j=0;j<M;++j)
+                if(S[j]=='('){if(i&t)C='[';else C=S[j];cout<<C;
+                              St[n++]=C; t>>=1;
+                             }
+                else {if(St[--n]=='[')C=']'; else C=S[j];
+                      cout<<C;
+                     }
+    }
+    while(Nxt(S));
+}

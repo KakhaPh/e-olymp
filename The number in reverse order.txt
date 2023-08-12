@@ -1,0 +1,17 @@
+#include <bits/stdc++.h>
+using namespace std;
+void GamSheb(unsigned long long N)
+{
+    if(N<10)cout<<N;
+    else
+    {
+        cout<<N%10;
+        GamSheb(N/10);
+    }
+}
+int main()
+{
+    unsigned long long N;
+    cin>>N;
+    GamSheb(N);
+}

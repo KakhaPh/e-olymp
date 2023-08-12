@@ -1,0 +1,14 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int N,Pr,Nx;
+    cin>>N>>Pr;
+    while(--N)
+    {
+        cin>>Nx;
+        if(Pr && Nx && Pr>0==Nx>0)
+	cout<<Pr<<' '<<Nx<<endl;
+        Pr=Nx;
+    }      
+}

@@ -1,0 +1,14 @@
+#include <bits/stdc++.h>
+using namespace std;
+int A[100000];
+int main() {
+    int N,K,i;
+    cin>>N>>K;
+    for(i=0;i<N;++i)
+        cin>>A[i];
+    multiset<int>D(A,A+N);
+    for(i=0;i<N;++i)
+        if(D.count(A[i])==K)break;
+    if(i==N)cout<<-1;
+    else cout<<A[i];
+}

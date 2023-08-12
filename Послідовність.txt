@@ -1,0 +1,14 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+    int N;
+    string P="",C="01";
+    cin>>N;
+    while(N)
+    {
+        P=C[N&1]+P;
+        N>>=1;
+    }
+    cout<<P;
+}

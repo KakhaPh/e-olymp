@@ -1,0 +1,12 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+    int N,i,P=0,K;
+    cin>>N;
+    if(N==1)P=90;
+    else if(N)
+    for(i=10,K=N*i;i<100;K=++i*N)
+        P+=i/10+i%10==K/100+K/10%10+K%10;
+    cout<<P;
+}

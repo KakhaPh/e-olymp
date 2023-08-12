@@ -1,0 +1,18 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int N,P,MT,MBDR,MBAL,M;
+    string S;
+    cin>>N>>P;
+    MBDR=MBAL=MT=0;
+    while(N--)
+    {
+        cin>>M>>S;
+        MT+=M;
+        if(S=="bedroom")MBDR+=M;
+        else if(S=="balcony")MBAL+=M;
+    }
+    cout<<MT<<endl<<MBDR<<endl;
+    cout<<fixed<<setprecision(6)<<(MT-MBAL)*P+MBAL*P*.5;
+}

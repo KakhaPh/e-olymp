@@ -1,0 +1,15 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+    string S;
+    int N,X=0;
+    while(cin>>S)
+    {
+        cin>>N;
+        if(S=="add")X+=N;
+        else if(S=="subtract")X-=N;
+              else X*=N;
+    }
+    cout<<X;
+}

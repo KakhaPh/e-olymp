@@ -1,0 +1,13 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+    short N,A,B,C,D;
+    cin>>N;
+    A=N/1000;
+    B=N/100%10;
+    C=N/10%10;
+    D=N%10;
+    if(B && C && D && N%A==0 && N%B==0 && N%C==0 && N%D==0)cout<<"YES";
+    else cout<<"NO";
+}

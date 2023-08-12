@@ -1,0 +1,23 @@
+#include <iostream>
+using namespace std;
+void Gam(short X)
+{
+    if(X<10)cout<<0;
+    cout<<X;
+}
+int main()
+{
+    short HS,HF,MS,MF,SS,SF;
+    char C;
+    cin>>HS>>C>>MS>>C>>SS;
+    cin>>HF>>C>>MF>>C>>SF;
+    SF-=SS;
+    if(SF<0)SF+=60,--MF;
+    MF-=MS;
+    if(MF<0)MF+=60,--HF;
+    HF-=HS;
+    if(HF<0)HF+=24;
+    Gam(HF);cout<<':';
+    Gam(MF);cout<<':';
+    Gam(SF);
+}

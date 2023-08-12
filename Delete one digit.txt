@@ -1,0 +1,11 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+    short N,A,B,C;
+    cin>>N;
+    A=N/100;B=N/10%10;C=N%10;
+    if(A<B)cout<<B*10+C;
+    else if(B<C)cout<<A*10+C;
+         else cout<<N/10;    
+}

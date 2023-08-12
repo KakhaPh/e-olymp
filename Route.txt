@@ -1,0 +1,31 @@
+#include <bits/stdc++.h>
+using namespace std;
+short D[250][250];
+int main()
+{
+    int i,j,N,k;
+    char C;
+    string P;
+    cin>>N;
+    for(i=0;i<N;++i)
+        for(j=0;j<N;++j)
+            cin>>C,D[i][j]=C-'0';
+    for(i=1;i<N;++i)
+        D[0][i]+=D[0][i-1];
+    for(i=1;i<N;++i)
+        D[i][0]+=D[i-1][0];
+    for(i=1;i<N;++i)
+        for(j=1;j<N;++j)
+            if(D[i][j-1]<D[i-1][j])D[i][j]+=D[i][j-1];
+            else D[i][j]+=D[i-1][j];
+    for(i=j=N-1,P="";i && j;)
+        if(D[i][j-1]<D[i-1][j])--j,P='1'+P;
+        else --i,P='0'+P;
+    if(i)P=string(i,'0')+P;
+    else P=string(j,'1')+P;
+    string S="#"+string(N-1,'.');
+    for(j=k=0;k<P.size();++k)
+        if(P[k]=='0')cout<<S<<endl,S=string(N,'.'),S[j]='#';
+        else S[++j]='#';
+    cout<<S<<endl;
+}

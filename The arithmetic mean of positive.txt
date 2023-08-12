@@ -1,0 +1,14 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int N,K=0;double J(0),M;
+    cin>>N;
+    while(N--)
+    {
+        cin>>M;
+        if(M>0)++K,J+=M;
+    }
+    if(K)cout<<fixed<<setprecision(2)<<J/K;
+    else cout<<"Not Found";
+}

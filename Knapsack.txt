@@ -1,0 +1,18 @@
+#include <iostream>
+using namespace std;
+short D[10001];
+int main()
+{
+    D[0]=1;
+    int i,S,M;
+    cin>>S;
+    while(cin>>M)
+    {
+        if(M>S)continue;
+        for(i=S;i>=M;--i)
+            if(D[i-M])D[i]=1;
+    }
+    for(i=S;i>=0;--i)
+        if(D[i])break;
+    cout<<i;
+}

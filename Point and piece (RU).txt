@@ -1,0 +1,10 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int Ax,Ay,Bx,By,Cx,Cy;
+    cin>>Ax>>Ay>>Bx>>By>>Cx>>Cy;
+    cout<<((By<=Ay && Ay<=Cy || Cy<=Ay && Ay<=By) &&
+    (Bx<=Ax && Ax<=Cx || Cx<=Ax && Ax<=Bx) &&
+    (Ay-By)*(Cx-Ax)==(Cy-Ay)*(Ax-Bx));
+}

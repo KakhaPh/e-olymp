@@ -1,0 +1,12 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+    string S;
+    int L,R;
+    cin>>S;
+    for(L=0,R=S.size()-1;L<R;++L,--R)
+        if(S[L]!=S[R])break;
+    if(L<R)cout<<"No";
+    else cout<<"Yes";
+}

@@ -1,0 +1,29 @@
+#include <bits/stdc++.h>
+using namespace std;
+pair<int,int>A[100000];
+int Mp[1001];
+int main()
+{
+    int N,i,L,R,Q,P,j;
+    cin>>N;
+    for(i=0;i<N;++i)
+        cin>>L>>R,A[i]=make_pair(L,R);
+    sort(A,A+N);
+    R=A[0].second;L=A[0].first;Q=P=1;
+    Mp[R]=1;   
+    for(i=1;i<N;++i)
+    {
+        ++Mp[A[i].second];
+        ++Q;
+        L=A[i].first;
+        if(A[i].second<R)R=A[i].second;
+        while(R<L)
+        {
+            Q-=Mp[R];
+            ++R;
+            while(!Mp[R])++R;
+        }
+        if(Q>P)P=Q;
+    }
+    cout<<P;
+}

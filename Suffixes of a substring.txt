@@ -1,0 +1,14 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+    string S,W;
+    short N,M,i;
+    cin>>S>>N>>M;
+    M=M-N+1;
+    --N;
+    cout<<M+1<<endl;
+    W=S.substr(N,M);
+    for(i=1;i<=M;++i)
+        cout<<W.substr(i)<<endl;
+}

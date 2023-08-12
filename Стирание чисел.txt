@@ -1,0 +1,11 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+    short N;
+    cin>>N;
+    ++N;
+    N&=3;
+    N>>=1;
+    cout<<N;
+}

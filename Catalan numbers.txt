@@ -1,0 +1,15 @@
+#include <iostream>
+using namespace std;
+long long C[10001]={1,1};
+int main(){
+	int N,M,i,j,k;
+    cin>>N>>M;
+	for(i=2;i<=N;++i)
+    {
+        for(j=0,k=i-1;j<k;++j,--k)
+            C[i]+=(C[j]*C[k])%M;
+        C[i]<<=1; if(i&1)k=i>>1,C[i]+=(C[k]*C[k])%M;
+        C[i]%=M;
+    }
+    cout<<C[N];
+}

@@ -1,0 +1,17 @@
+#include <iostream> 
+using namespace std;
+int C[101];
+int main() 
+{ 
+    short N,K;
+    int i,M;
+    cin>>N;
+    for(i=1;i<=N;++i)
+        cin>>C[i];
+    cin>>M;
+    for(i=0;i<M;++i)
+        cin>>K,--C[K];
+    for(i=1;i<=N;++i)
+        if(C[i]<0)cout<<"yes"<<endl;
+        else cout<<"no"<<endl;
+}

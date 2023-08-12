@@ -1,0 +1,12 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+    int N,P;
+    cin>>N;
+    P=!N;
+    while(N)
+        ++P,
+        N/=10;
+    cout<<P;
+}

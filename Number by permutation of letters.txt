@@ -1,0 +1,40 @@
+#include <bits/stdc++.h>
+using namespace std;
+long long RS(string S)
+{
+    map<char,int>M;
+    int i,p,q,K; long long P,Q;
+    for(i=0;i<S.size();++i)
+        ++M[S[i]];
+    map<char,int>::iterator X;
+    P=p=1;
+    for(X=M.begin();X!=M.end();++X)
+    {
+        K=X->second;
+        Q=q=1;
+        while(K--)
+            P*=p++,Q*=q++;
+        P/=Q;
+    }
+    return P;
+}
+int main()
+{
+    string S,D;
+    cin>>S;
+    long long P=0;
+    int i,j;
+    D=S;
+    sort(D.begin(),D.end());
+    while(D<S)
+    {
+        for(i=0;i<S.size();++i)
+            if(D[i]<S[i])break;
+        P+=RS(D.substr(i+1));
+        for(j=i+1;j<D.size();++j)
+            if(D[j]>D[i])break;
+        swap(D[j],D[i]);
+        sort(D.begin()+i+1,D.end());
+    }
+    cout<<P;
+}

@@ -1,0 +1,27 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int N,M,P,ans=999999999,i,K,L;
+    cin>>N>>P;
+    for(i=2;i*i<=P;++i)
+       if(P%i==0)
+        {
+            K=0;
+            do
+                ++K,P/=i;
+            while(P%i==0);
+            L=0;
+            M=N;
+            while(M>=i)
+                L+=(M/=i);
+            ans=min(ans,L/K);
+        }
+    if(P!=1){
+            L=0;
+            while(N>=P)
+                L+=(N/=P);
+            ans=min(ans,L);
+    }
+    cout<<ans;
+}

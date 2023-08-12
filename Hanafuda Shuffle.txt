@@ -1,0 +1,26 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    short N,R,L,K,i;
+    cin>>N>>R;
+    while(N)
+    {
+        vector<short>A(N);
+        for(i=0;i<N;++i)
+            A[i]=N-1-i;
+        while(R--)
+        {
+            cin>>L>>K;
+            if(L==1)continue;
+            --L;
+            for(i=0;i<N;++i)
+                if(A[i]>=L && A[i]<=L+K-1)A[i]-=L;
+                else if(A[i]<L)A[i]+=K;
+        }
+        for(i=0;i<N;++i)
+            if(A[i]==0)break;
+        cout<<i+1<<endl;
+        cin>>N>>R;
+    }
+}

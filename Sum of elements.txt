@@ -1,0 +1,10 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    double M,ans=0;
+    cin>>M;
+    while(cin>>M)
+        ans+=M;
+    cout<<fixed<<setprecision(1)<<ans;
+}

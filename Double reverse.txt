@@ -1,0 +1,15 @@
+#include <iostream>
+using namespace std;
+short M[1001];
+int main()
+{
+    short N,A,B,C,D,i,j;
+    cin>>N>>A>>B>>C>>D;
+    for(i=1;i<=N;++i)M[i]=i;
+    for(i=A,j=B;i<j;++i,--j)
+        swap(M[i],M[j]);
+    for(i=C,j=D;i<j;++i,--j)
+        swap(M[i],M[j]);
+    for(i=1;i<=N;++i)
+        cout<<M[i]<<' ';
+}

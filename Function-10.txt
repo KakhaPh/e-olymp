@@ -1,0 +1,11 @@
+#include <bits/stdc++.h>
+using namespace std;
+long long F(short M,short N){
+    if(M==0 || M==N)return 1;
+    return F(M-1,N-1)+F(M,N-1);
+}
+int main(){
+    short M,N;
+    cin>>N>>M;
+    cout<<F(M,N);
+}

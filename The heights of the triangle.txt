@@ -1,0 +1,9 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int a, b, c; double S;
+    cin>>a>>b>>c;
+    S=.5*sqrt((a+b+c)*(b+c-a)*(a+c-b)*(a+b-c));
+    cout<<fixed<<setprecision(2)<<S/a<<' '<<S/b<<' '<<S/c;    
+}

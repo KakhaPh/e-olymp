@@ -1,0 +1,15 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+    int P,i,ans=0;
+    string N;
+    cin>>P>>N;
+    if(P>2)
+    {
+    for(i=0;i<N.size();++i)
+        ans+=N[i]-'0';
+    ans%=P-1;
+    }
+    cout<<ans;
+}

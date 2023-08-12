@@ -1,0 +1,15 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    long long Pr,Nx;
+    int N;
+    cin>>N;
+    Pr=0;Nx=1;
+    while(--N)
+    {
+        Nx+=Pr;
+        Pr=Nx-Pr;
+    }
+    cout<<Nx;
+}

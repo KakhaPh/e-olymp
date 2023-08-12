@@ -1,0 +1,15 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    unsigned long long N,P=0,W=1;
+    short C;
+    cin>>N;
+    do
+    {
+        C=N%10;
+        if(C&1)P+=C*W,W*=10;
+    }
+    while(N/=10);
+    cout<<P;
+}

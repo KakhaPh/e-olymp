@@ -1,0 +1,12 @@
+#include <bits/stdc++.h>
+using namespace std;
+short A[100];
+int main()
+{
+	short N,i,P;
+    for(cin>>N,P=i=0;i<N;++i)
+        cin>>A[i];
+    for(i=1;i<N-1;++i)
+        P+=!(A[i-1]&1)&&!(A[i+1]&1);
+    cout<<P;
+}

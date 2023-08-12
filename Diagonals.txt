@@ -1,0 +1,16 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    short N,i,j;
+    int M,Dm,Ds;
+    cin>>N;
+    for(Dm=Ds=i=0;i<N;++i)
+        for(j=0;j<N;++j)
+            {
+                cin>>M;
+                if(i==j)Dm+=M;
+                if(i+j==N-1)Ds+=M;
+            }
+    cout<<Dm<<' '<<Ds;
+}

@@ -1,0 +1,20 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+    string S,D;
+    cin>>S;
+    int N=S.size(),i;
+    D=S.substr(1,1)+S[3]+S[9];
+    cout<<D<<endl;
+    D=S.substr(0,2)+S[N-1];
+    cout<<D<<endl;
+    cout<<S.substr(N-5)<<endl;
+    cout<<S.substr(0,N-4)<<endl;
+    for(D="",i=0;i<N;i+=2)
+        D+=S[i];
+    cout<<D<<endl<<D.size()<<endl;
+    for(D="",i=N-1;i>=0;i-=2)
+        D+=S[i];
+    cout<<D<<endl;
+}

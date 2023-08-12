@@ -1,0 +1,20 @@
+#include <iostream>
+using namespace std;
+int A[100000];
+int main()
+{
+    int i,L,R,N,AL,AR;
+    long long P=0;
+    cin>>N;
+    for(i=0;i<N;++i)
+        cin>>A[i];
+    P=1LL*min(A[0],A[N-1])*(N-1);
+    L=0;R=N-1; AL=A[0];AR=A[R];
+    while(R-L>1)
+    {
+        if(A[L]<A[R]){while(++L<R && A[L]<=AL);AL=A[L];}
+        else {while(--R>L && A[R]<=AR);AR=A[R];}
+        P=max(P,1LL*min(AL,AR)*(R-L));
+    }
+    cout<<P;
+}

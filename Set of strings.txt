@@ -1,0 +1,24 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    string A;
+    int T,i,j,N;
+    cin>>T;
+    getline(cin,A);
+    while(T--)
+    {
+        vector<vector<string> >D(51);
+        getline(cin,A);
+        stringstream SS(A);
+        while(SS>>A)
+            D[A.size()].push_back(A);
+        //map<int,vector<int> >::iterator X;
+        for(i=1;i<=50;++i)
+        {
+            for(j=0;j<D[i].size();++j)
+                cout<<D[i][j]<<' ';
+        }
+        cout<<endl;
+    }
+}

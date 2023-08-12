@@ -1,0 +1,36 @@
+#include <bits/stdc++.h>
+using namespace std;
+string ML(pair<string,int>X,int Y)
+{
+    string A=X.first;
+    int K=X.second;
+    K>>=1;Y>>=1;
+    if(K<Y)A="("+A+")";
+    return A;
+}
+string MR(pair<string,int>X,int Y)
+{
+    string A=X.first;
+    int K=X.second;
+    if((Y&1) && K<=Y || !(Y&1) && K<Y)A="("+A+")";
+    return A;
+}
+int main()
+{
+    string G,L,R;
+    pair<string,int> St[50],A,B;
+    map<char,int>Pr;
+    Pr['+']=0;Pr['-']=1;Pr['*']=2;Pr['/']=3;
+    int i,n=0,K;
+    cin>>G;
+    for(i=G.size()-1;i>=0;--i)
+        if('a'<=G[i] && G[i]<='z')St[n++]=make_pair(string(1,G[i]),4);
+        else
+        {
+            A=St[--n];B=St[--n];K=Pr[G[i]];
+            L=ML(A,K); R=MR(B,K);
+            St[n++]=make_pair(L+G[i]+R,K);
+        }
+    L=St[0].first;
+    cout<<L;
+}

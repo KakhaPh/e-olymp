@@ -1,0 +1,12 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+    string N;
+    cin>>N;
+    int i,P=0;
+    for(i=0;i<N.size();P%=15,++i)
+        P<<=1,P+=N[i]-'0';
+    if(P)cout<<"NO";
+    else cout<<"YES";
+}

@@ -1,0 +1,15 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+    string S,W;
+    cin>>S>>W;
+    int i,N=S.size();
+    for(i=0;i<N;++i)
+        if(S[i]!=W[i])break;
+    if(i==N){cout<<"YES";return 0;}
+    if(i==N-1){cout<<"NO";return 0;}
+    swap(S[i],S[i+1]);
+    if(S==W)cout<<"YES";
+    else cout<<"NO";
+}

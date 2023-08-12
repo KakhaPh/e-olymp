@@ -1,0 +1,9 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+    long long N;
+    cin>>N;
+    if(N<0)++N,cout<<N/10*10;
+    else cout<<(N/10+1)*10;
+}

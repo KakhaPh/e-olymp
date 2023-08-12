@@ -1,0 +1,16 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int n,i,b,min,max=0;
+    cin>>n>>b;
+    min=b;
+    max=b;
+    for(i=0;i<n;i++){
+        cin>>b;
+        if(min>b)min=b;
+        if(max<b)max=b;
+        
+}
+    cout<<max+min;
+}

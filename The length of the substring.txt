@@ -1,0 +1,16 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+string a;
+cin >> a;
+int s,x,z(0);
+cin >> s >> x;
+    s--;
+for (int j = s; j < x; j++){ 
+    z++;
+}
+    cout<<z<<endl;
+    for (int j = s; j < x; j++){ 
+        cout<<a[j];
+}
+}

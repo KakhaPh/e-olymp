@@ -1,0 +1,11 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+    string S;
+    int i,N,R;
+    getline(cin,S);
+    for(N=S.size(),i=R=0;i<N;++i)
+        R+='0'<=S[i] && S[i]<='9';
+    cout<<R;
+}

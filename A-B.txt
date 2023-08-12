@@ -1,0 +1,23 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+    string A,B;
+    int i,K=0,N;
+    cin>>A>>B;
+    for(N=A.size(),i=N-1;i>=0;--i)
+    {
+        if('0'<=B[i] && B[i]<='9'){
+            A[i]-=B[i]-'0';A[i]+=K;
+            if(A[i]<'0')A[i]+=10,K=-1; else K=0;
+        } else
+        if('A'<=B[i] && B[i]<='Z'){
+            A[i]-=B[i]-'A';A[i]+=K;
+            if(A[i]<'A')A[i]+=26,K=-1; else K=0;
+        } else {
+            A[i]-=B[i]-'a';A[i]+=K;
+            if(A[i]<'a')A[i]+=26,K=-1; else K=0;
+        }
+    }
+    cout<<A;
+}

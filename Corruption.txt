@@ -1,0 +1,18 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    priority_queue<double,vector<double>,greater<double> >V;
+    int N,i;
+    double P,M,A,B; 
+    cin>>N>>P;
+    P=(100-P)*.01;
+    for(i=0;i<N;++i){cin>>M;V.push(M);}
+    while(--N)
+    {
+        A=V.top(); V.pop();
+        B=V.top(); V.pop();
+        V.push((A+B)*P);
+    }
+    cout<<setprecision(2)<<fixed<<V.top();
+}

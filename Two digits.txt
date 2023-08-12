@@ -1,0 +1,11 @@
+#include <iostream>
+using namespace std;
+int P[31]={0,2,4};
+int main()
+{
+    short N,i;
+    cin>>N;
+    for(i=3;i<=N;++i)
+        P[i]=P[i-1]+P[i-2];
+    cout<<P[N];
+}

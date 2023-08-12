@@ -1,0 +1,17 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+    int N,K,M,m;
+    cin>>N;
+    if(N<2){cout<<"Ooops!";return 0;}
+    cin>>M;
+    m=M;    
+    while(--N)
+    {
+        cin>>K;
+        if(K<m)m=K;
+        else if(K>M)M=K;
+    }
+    cout<<m<<' '<<M;
+}

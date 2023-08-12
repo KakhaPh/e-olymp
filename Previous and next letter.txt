@@ -1,0 +1,10 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+    char X,Pr,Nx;
+    cin>>X;
+    Pr=X-1;
+    Nx=X+1;
+    cout<<Pr<<' '<<Nx;
+}

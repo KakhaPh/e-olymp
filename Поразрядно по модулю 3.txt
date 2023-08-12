@@ -1,0 +1,42 @@
+#include <iostream>
+using namespace std;
+string F(string N)
+{
+    int i,n=N.size();
+    if(N[n-1]=='0')return N;
+    if(N[n-1]=='2')return string(n,'0');
+    for(i=0;i<n-1;++i)
+        if(N[i]!='0')
+            if(N[i]=='1')N[i]='2';
+            else if(N[i]=='2')N[i]='1';
+    return N;
+}
+int main()
+{
+    string A,B;
+    cin>>A>>B;
+    int i,K,SA=A.size(),SB=B.size();
+    if(SA<SB)A=string(SB-SA,'0')+A,SA=SB;
+    else if(SA>SB)B=string(SA-SB,'0')+B,SB=SA;
+    if(A==B)cout<<string(SA,'0');
+    else
+    {
+        if(A>B)swap(A,B);
+        B=F(B);
+        if(A==string(SA,'0'))cout<<B;
+        else
+        {
+            for(i=SA-1;;--i)
+                if(A[i]=='0')A[i]='2';
+                else {--A[i];break;}
+            A=F(A);
+            for(i=0;i<SA;++i)
+            {
+                K=B[i]-A[i];
+                if(K<0)K+=3;
+                B[i]=char('0'+K);
+            }
+            cout<<B;
+        }
+    }
+}

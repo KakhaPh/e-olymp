@@ -1,0 +1,8 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+    int N,M;
+    cin>>N>>M;
+    cout<<3LL*(N-1)*M;
+}

@@ -1,0 +1,21 @@
+#include <iostream>
+using namespace std;
+long long St[500001];
+int main()
+{
+    string S;
+    cin>>S;
+    int i,n,N=S.size();long long R1,R2;
+    for(n=0,i=N-1;i>=0;--i)
+        if('0'<=S[i] && S[i]<='9')St[n++]=S[i]-'0';
+        else {
+        R1=St[--n];R2=St[--n];
+        if(S[i]=='+')R1+=R2; else
+        if(S[i]=='-')R1-=R2; else
+        if(S[i]=='*')R1*=R2; else
+        if(R2==0)break; else R1/=R2;
+        St[n++]=R1;            
+    }
+    if(i==-1)cout<<St[0];
+    else cout<<"Runtime error in pos: "<<i+1;
+}
